@@ -1,0 +1,29 @@
+[
+{
+	"Title" : "Saving Private Ryan",
+	"Year" : 1998,
+	"Genre" : "Drama",
+	"Director" : "Steven Spielberg",
+	"Imdb" : 8.6,
+	"Cover" : "emoji"
+},
+{
+        "Title" : "BBBBBB",
+	"Year" : 1998,
+	"Genre" : "Drama",
+	"Director" : "LOLOLOLOLO",
+	"Imdb" : 8.6,
+	"Cover" : "emoji"
+
+},
+
+{
+        "Title" : "CCCCCCC",
+	"Year" : 1998,
+	"Genre" : "Drama",
+	"Director" : "HUHUHUHUHU",
+	"Imdb" : 8.6,
+	"Cover" : "emoji"
+
+}
+]

@@ -16,9 +16,22 @@
     
     <ScrollView>
         <VerticalStackLayout>
+            <SearchBar Placeholder="Search for..." SearchButtonPressed="SearchBar_SearchButtonPressed"/>
+            <Label x:Name="lblresultSearch"/>
             <Button x:Name="ToggleThemeButton" Text="Toggle Theme" Margin="0,20,0,20"
                    Clicked="ToggleThemeButton_Clicked" FontAttributes="Bold"
                     WidthRequest="150"/>
+            <Label x:Name="lblMoviesList" Text="Movies List" HorizontalOptions="Center"
+                   Margin="0,20,0,0" FontSize="Large"/>
+            <Button x:Name="btnReadFile" Text ="Read file" Clicked="btnReadFile_Clicked" WidthRequest="150" Margin="0,20,0,20"/>
+            <Label Text="{Binding Title}" FontSize="Large" FontAttributes="Bold"/>
+            <Label Text="{Binding Year}" FontSize="Medium"/>
+            <Label Text="{Binding Genre}" FontSize="Medium"/>
+            <Label Text="{Binding Director}" FontSize="Medium"/>
+            <Label Text="{Binding Imdb}" FontSize="Medium"/>
+            <Label Text="{Binding Cover}" FontSize="Medium"/>
+            <Label x:Name="lblFile"/>
+            
 
         </VerticalStackLayout>
     </ScrollView>
