@@ -10,8 +10,9 @@ namespace MovieExplorer
     {
         private bool lightTheme;
         //Movie[] _moviesObjects = new Movie[10];
-        List<Movie> movieList;
-        
+        List<Movie> movieList; // why do i need to create this
+        private MoviesViewModel viewModel; //// why do i need to create this
+
 
 
 
@@ -19,6 +20,8 @@ namespace MovieExplorer
         {
             InitializeComponent();
             lightTheme = Preferences.Default.Get("LightTheme", true); //set light theme as default
+            viewModel = new MoviesViewModel();
+            BindingContext = viewModel;
         }
 
         //change theme
@@ -64,14 +67,10 @@ namespace MovieExplorer
             {
                 using var stream = await FileSystem.OpenAppPackageFileAsync("list_movies.json");
                 using var reader = new StreamReader(stream);
-                jsonstring = await reader.ReadToEndAsync();
-                List<Movie> _movies = JsonSerializer.Deserialize<List<Movie>>(jsonstring);
-
-
-                /*for (int i = 0; i < _movies.Count; i++) {
-                    for(int j = 0; i < _movies[i].)
-                    _moviesObjects[i] = new Movie();
-                }*/
+                jsonstring = await reader.ReadToEndAsync(); // read all the content into the string
+                List<Movie> _movies = JsonSerializer.Deserialize<List<Movie>>(jsonstring); // create list of objects 
+                viewModel.addMovies(_movies); // add books to observable collection
+               
 
             }
             catch
@@ -79,24 +78,9 @@ namespace MovieExplorer
                 await DisplayAlert("Error", "Could not read file", "OK");
                 return;
             }
-            //List<Movie> movies = JsonSerializer.Deserialize<List<Movie>>(jsonstring);
-
-            try
-            {
-                
-            } 
-            catch
-            {
-                await DisplayAlert("Error", "error", "OK");
-            }
-
-
-
+   
         }
 
-
-
-        
     }
 }
    
