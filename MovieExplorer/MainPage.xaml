@@ -25,7 +25,7 @@
                     WidthRequest="150"/>
             <Label x:Name="lblMoviesList" Text="Movies List" HorizontalOptions="Center"
                    Margin="0,20,0,0" FontSize="Large"/>
-            <Button x:Name="btnReadFile" Text ="Read file" Clicked="btnReadFile_Clicked" WidthRequest="150" Margin="0,20,0,20"/>
+   
             <CollectionView ItemsSource="{Binding Movies}"
                            SelectionMode="Single" 
                            SelectedItem="{Binding selectedMovie}"

@@ -19,8 +19,7 @@ namespace MovieExplorer
         {
             InitializeComponent();
             lightTheme = Preferences.Default.Get("LightTheme", true); //set light theme as default
-            viewModel = new MoviesViewModel();
-            BindingContext = viewModel;
+           
         }
 
         //change theme
@@ -58,28 +57,6 @@ namespace MovieExplorer
 
         }
 
-        private async void btnReadFile_Clicked(object sender, EventArgs e)
-        {
-            //open and try to read the file
-            string jsonstring = "";
-            try
-            {
-                using var stream = await FileSystem.OpenAppPackageFileAsync("list_movies.json");
-                using var reader = new StreamReader(stream);
-                jsonstring = await reader.ReadToEndAsync(); // read all the content into the string
-                List<Movie> _movies = JsonSerializer.Deserialize<List<Movie>>(jsonstring); // create list of objects 
-                viewModel.addMovies(_movies); // add books to observable collection
-               
-
-            }
-            catch
-            {
-                await DisplayAlert("Error", "Could not read file", "OK");
-                return;
-            }
-   
-        }
-
         private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.CurrentSelection.FirstOrDefault() is Movie selectedMovie)
@@ -93,6 +70,30 @@ namespace MovieExplorer
                 ((CollectionView)sender).SelectedItem = null; // deselect the item in the collection view
             }
 
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            viewModel = new MoviesViewModel();
+            BindingContext = viewModel;
+            //open and try to read the file
+            string jsonstring = "";
+            try
+            {
+                using var stream = await FileSystem.OpenAppPackageFileAsync("list_movies.json");
+                using var reader = new StreamReader(stream);
+                jsonstring = await reader.ReadToEndAsync(); // read all the content into the string
+                List<Movie> _movies = JsonSerializer.Deserialize<List<Movie>>(jsonstring); // create list of objects 
+                viewModel.addMovies(_movies); // add books to observable collection
+
+
+            }
+            catch
+            {
+                await DisplayAlert("Error", "Could not read file", "OK");
+                return;
+            }
         }
     }
 }
