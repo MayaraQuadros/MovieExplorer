@@ -3,6 +3,7 @@
 using System.IO;
 using System.Net.NetworkInformation;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace MovieExplorer
 {
@@ -79,6 +80,20 @@ namespace MovieExplorer
    
         }
 
+        private async Task CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.CurrentSelection.FirstOrDefault() is Movie selectedMovie)
+            {
+                var parameters = new Dictionary<string, object> // store the selected movie in a dictionary
+                {
+                    {"Movie", selectedMovie}
+                };
+
+                await Shell.Current.GoToAsync(nameof(MovieDetailPage), parameters); // send the dictionary to the MovieDetailPage
+                ((CollectionView)sender).SelectedItem = null; // deselect the item in the collection view
+            }
+
+        }
     }
 }
    

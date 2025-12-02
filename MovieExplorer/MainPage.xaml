@@ -6,8 +6,10 @@
     
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="LightBackgroundColor">#FAFAFA</Color> <!--Light mode color-->
-            <Color x:Key="DarkBackgroundColor">#181818</Color> <!--Dark mode color-->
+            <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
+            <!--Light mode color-->
+            <Color x:Key="DarkBackgroundColor">#181818</Color>
+            <!--Dark mode color-->
 
             <Color x:Key="PageBackgroundColor">#181818</Color>
             <Color x:Key="ThemeButton" >Black</Color>
@@ -25,8 +27,9 @@
                    Margin="0,20,0,0" FontSize="Large"/>
             <Button x:Name="btnReadFile" Text ="Read file" Clicked="btnReadFile_Clicked" WidthRequest="150" Margin="0,20,0,20"/>
             <CollectionView ItemsSource="{Binding Movies}"
-                           SelectionMode="Single"
-                           SelectedItem="{Binding selectedMovie}">
+                           SelectionMode="Single" 
+                           SelectedItem="{Binding selectedMovie}"
+                           SelectionChanged="CollectionView_SelectionChanged">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="10">
