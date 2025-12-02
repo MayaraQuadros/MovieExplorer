@@ -80,7 +80,7 @@ namespace MovieExplorer
    
         }
 
-        private async Task CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.CurrentSelection.FirstOrDefault() is Movie selectedMovie)
             {

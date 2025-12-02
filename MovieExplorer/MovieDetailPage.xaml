@@ -4,11 +4,11 @@
              x:Class="MovieExplorer.MovieDetailPage"
              Title="MovieDetailPage">
     <VerticalStackLayout>
-        <Label Text="Title" FontSize="Large" FontAttributes="Bold"/>
-        <Label Text="Year" FontSize="Medium"/>
-        <Label Text="Genre" FontSize="Medium"/>
-        <Label Text="Year" FontSize="Director"/>
-        <Label Text="Imdb" FontSize="Medium"/>
+        <Label Text="{Binding Title}" FontSize="Large" FontAttributes="Bold"/>
+        <Label Text="{Binding Year}" FontSize="Medium"/>
+        <Label Text="{Binding Genre}" FontSize="Medium"/>
+        <Label Text="{Binding Director}" FontSize="Medium"/>
+        <Label Text="{Binding Imdb}" FontSize="Medium"/>
         <Button Text="Back" Clicked="BackButton_Clicked"/>
 
     </VerticalStackLayout>
