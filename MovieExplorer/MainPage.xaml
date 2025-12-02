@@ -24,12 +24,24 @@
             <Label x:Name="lblMoviesList" Text="Movies List" HorizontalOptions="Center"
                    Margin="0,20,0,0" FontSize="Large"/>
             <Button x:Name="btnReadFile" Text ="Read file" Clicked="btnReadFile_Clicked" WidthRequest="150" Margin="0,20,0,20"/>
-            <Label Text="{Binding Title}" FontSize="Large" FontAttributes="Bold"/>
-            <Label Text="{Binding Year}" FontSize="Medium"/>
-            <Label Text="{Binding Genre}" FontSize="Medium"/>
-            <Label Text="{Binding Director}" FontSize="Medium"/>
-            <Label Text="{Binding Imdb}" FontSize="Medium"/>
-            <Label Text="{Binding Cover}" FontSize="Medium"/>
+            <CollectionView ItemsSource="{Binding Movies}"
+                           SelectionMode="Single"
+                           SelectedItem="{Binding selectedMovie}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Title}" FontSize="Large" FontAttributes="Bold"/>
+                            <Label Text="{Binding Year}" FontSize="Medium"/>
+                            <Label Text="{Binding Genre}" FontSize="Medium"/>
+                            <Label Text="{Binding Director}" FontSize="Medium"/>
+                            <Label Text="{Binding Imdb}" FontSize="Medium"/>
+                            <Label Text="{Binding Cover}" FontSize="Medium"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
             <Label x:Name="lblFile"/>
             
 

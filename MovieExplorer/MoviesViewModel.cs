@@ -1,15 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MovieExplorer
 {
-    internal class MoviesViewModel
+    internal class MoviesViewModel : INotifyPropertyChanged // implement Interface
     {
+        private Movie _selectedMovie;
         public ObservableCollection<Movie> Movies { get; set; }
+
+
+       
 
         public MoviesViewModel() 
         {
@@ -29,6 +34,28 @@ namespace MovieExplorer
                                         Imdb = moviesList[i].Imdb,
                                         Cover = moviesList[i].Cover });
             }
+        }
+
+        public Movie SelectedMovie {
+            get
+            { 
+                return _selectedMovie;
+            }
+            set
+            { 
+                if (_selectedMovie != value)
+                {
+                    _selectedMovie = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string? propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -9,9 +9,7 @@ namespace MovieExplorer
     public partial class MainPage : ContentPage
     {
         private bool lightTheme;
-        //Movie[] _moviesObjects = new Movie[10];
-        List<Movie> movieList; // why do i need to create this
-        private MoviesViewModel viewModel; //// why do i need to create this
+        private MoviesViewModel viewModel; 
 
 
 
