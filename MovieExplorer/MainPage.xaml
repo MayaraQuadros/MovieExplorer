@@ -34,11 +34,11 @@
                     <DataTemplate>
                         <StackLayout Padding="10">
                             <Label Text="{Binding Title}" FontSize="Large" FontAttributes="Bold"/>
-                            <Label Text="{Binding Year}" FontSize="Medium"/>
-                            <Label Text="{Binding Genre}" FontSize="Medium"/>
-                            <Label Text="{Binding Director}" FontSize="Medium"/>
-                            <Label Text="{Binding Imdb}" FontSize="Medium"/>
-                            <Label Text="{Binding Cover}" FontSize="Medium"/>
+                            <Label Text="{Binding Year}" FontSize="Small"/>
+                            <Label Text="{Binding Genre}" FontSize="Small"/>
+                            <Label Text="{Binding Director}" FontSize="Small"/>
+                            <Label Text="{Binding Imdb}" FontSize="Small"/>
+                            <Label Text="{Binding Cover}" FontSize="Small"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
