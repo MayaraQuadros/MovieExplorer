@@ -1,5 +1,6 @@
 ﻿
 
+using System;
 using System.IO;
 using System.Net.NetworkInformation;
 using System.Text.Json;
@@ -19,6 +20,8 @@ namespace MovieExplorer
         {
             InitializeComponent();
             lightTheme = Preferences.Default.Get("LightTheme", true); //set light theme as default
+            viewModel = new MoviesViewModel();
+            BindingContext = viewModel;
            
         }
 
@@ -75,24 +78,13 @@ namespace MovieExplorer
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            viewModel = new MoviesViewModel();
-            BindingContext = viewModel;
-            //open and try to read the file
-            string jsonstring = "";
-            try
-            {
-                using var stream = await FileSystem.OpenAppPackageFileAsync("list_movies.json");
-                using var reader = new StreamReader(stream);
-                jsonstring = await reader.ReadToEndAsync(); // read all the content into the string
-                List<Movie> _movies = JsonSerializer.Deserialize<List<Movie>>(jsonstring); // create list of objects 
-                viewModel.addMovies(_movies); // add books to observable collection
 
-
-            }
-            catch
+            //checks if there is viewModel object and if the file was already downloade
+            if (viewModel != null && !viewModel.IsLoaded)
             {
-                await DisplayAlert("Error", "Could not read file", "OK");
-                return;
+                await Task.Delay(50);
+                await viewModel.DownloadMovies();
+              
             }
         }
     }

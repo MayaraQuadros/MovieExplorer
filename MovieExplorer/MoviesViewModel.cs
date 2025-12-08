@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace MovieExplorer
@@ -11,10 +12,21 @@ namespace MovieExplorer
     internal class MoviesViewModel : INotifyPropertyChanged // implement Interface
     {
         private Movie _selectedMovie;
-        public ObservableCollection<Movie> Movies { get; set; }
+
+        private ObservableCollection<Movie> _movies;
+
+        public ObservableCollection<Movie> Movies
+        {
+            get => _movies;
+            set
+            {
+                _movies = value;
+                OnPropertyChanged();
+            }
+        }
 
 
-       
+
 
         public MoviesViewModel() 
         {
@@ -23,18 +35,7 @@ namespace MovieExplorer
             };
         }
 
-        public void addMovies(List<Movie> moviesList)
-        {
-            for (int i = 0; i < moviesList.Count; i++) {
-
-                Movies.Add(new Movie {Title = moviesList[i].Title, 
-                                        Year = moviesList[i].Year,
-                                        Genre = moviesList[i].Genre,
-                                        Director = moviesList[i].Director,
-                                        Imdb = moviesList[i].Imdb,
-                                        Cover = moviesList[i].Cover });
-            }
-        }
+   
 
         public Movie SelectedMovie {
             get
@@ -50,6 +51,52 @@ namespace MovieExplorer
                 }
             }
         }
+
+        public bool IsLoaded { get; private set; } = false;
+
+        public async Task DownloadMovies()
+        {
+            if (!IsLoaded)
+            {
+                //set up cache filename
+                string filename = Path.Combine(FileSystem.Current.AppDataDirectory, "list_movies.json");
+                
+                //if file exists reads the content into observable colection
+                if (File.Exists(filename))
+                {
+                    using FileStream inputStream = File.OpenRead(filename);
+                    using StreamReader reader = new StreamReader(inputStream);
+                    string contents = await reader.ReadToEndAsync();
+                    Movies = JsonSerializer.Deserialize<ObservableCollection<Movie>>(contents);
+
+                }
+                else
+                {
+                    try 
+                    {
+                        //download from the raw folder
+                        using var stream = await FileSystem.OpenAppPackageFileAsync("list_movies.json");
+                        using var reader = new StreamReader(stream);
+                        string contents = await reader.ReadToEndAsync(); // read all the content into the string
+                        Movies = JsonSerializer.Deserialize<ObservableCollection<Movie>>(contents);
+
+                        //save it to the device
+                        using FileStream outputStream = File.Create(filename);
+                        using StreamWriter writer = new StreamWriter(outputStream);
+                        await writer.WriteAsync(contents);
+
+
+                    }
+                    catch
+                    {
+
+                    }
+                }
+                IsLoaded = true;
+            }
+              
+        }
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
