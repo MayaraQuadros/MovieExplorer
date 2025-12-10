@@ -18,7 +18,7 @@
     
     <ScrollView>
         <VerticalStackLayout>
-            <SearchBar x:Name="searchBarEntry" Placeholder="Search for..."
+            <SearchBar x:Name="searchBarEntry" Placeholder="Search movies by Title, Genre, Year, Director or IMDB rating"
                       SearchButtonPressed="SearchBar_SearchButtonPressed"/>
             <Label x:Name="lblresultSearch"/>
             <Label x:Name="lblFile"/>

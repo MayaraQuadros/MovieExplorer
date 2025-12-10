@@ -1,0 +1,431 @@
+[
+  {
+    "Title": "Saving Private Ryan",
+    "Year": 1998,
+    "Genre": "Drama",
+    "Director": "Steven Spielberg",
+    "Imdb": 8.6,
+    "Cover": "🎖️"
+  },
+  {
+    "Title": "La La Land",
+    "Year": 2016,
+    "Genre": "Romantic",
+    "Director": "Damien Chazelle",
+    "Imdb": 8.0,
+    "Cover": "💃"
+  },
+  {
+    "Title": "The Notebook",
+    "Year": 2004,
+    "Genre": "Romantic",
+    "Director": "Nick Cassavetes",
+    "Imdb": 7.8,
+    "Cover": "📓"
+  },
+  {
+    "Title": "Pride & Prejudice",
+    "Year": 2005,
+    "Genre": "Romantic",
+    "Director": "Joe Wright",
+    "Imdb": 7.8,
+    "Cover": "🌸"
+  },
+  {
+    "Title": "Before Sunrise",
+    "Year": 1995,
+    "Genre": "Romantic",
+    "Director": "Richard Linklater",
+    "Imdb": 8.1,
+    "Cover": "🌅"
+  },
+  {
+    "Title": "A Star Is Born",
+    "Year": 2018,
+    "Genre": "Romantic",
+    "Director": "Bradley Cooper",
+    "Imdb": 7.6,
+    "Cover": "⭐"
+  },
+  {
+    "Title": "Her",
+    "Year": 2013,
+    "Genre": "Romantic",
+    "Director": "Spike Jonze",
+    "Imdb": 8.0,
+    "Cover": "💗🤖"
+  },
+  {
+    "Title": "Call Me by Your Name",
+    "Year": 2017,
+    "Genre": "Romantic",
+    "Director": "Luca Guadagnino",
+    "Imdb": 7.8,
+    "Cover": "🍑"
+  },
+  {
+    "Title": "Titanic",
+    "Year": 1997,
+    "Genre": "Romantic",
+    "Director": "James Cameron",
+    "Imdb": 7.9,
+    "Cover": "🚢"
+  },
+  {
+    "Title": "Eternal Sunshine of the Spotless Mind",
+    "Year": 2004,
+    "Genre": "Romantic",
+    "Director": "Michel Gondry",
+    "Imdb": 8.3,
+    "Cover": "🧠💛"
+  },
+
+  {
+    "Title": "Gone Girl",
+    "Year": 2014,
+    "Genre": "Thriller",
+    "Director": "David Fincher",
+    "Imdb": 8.1,
+    "Cover": "🕵️"
+  },
+  {
+    "Title": "Se7en",
+    "Year": 1995,
+    "Genre": "Thriller",
+    "Director": "David Fincher",
+    "Imdb": 8.6,
+    "Cover": "7️⃣"
+  },
+  {
+    "Title": "Shutter Island",
+    "Year": 2010,
+    "Genre": "Thriller",
+    "Director": "Martin Scorsese",
+    "Imdb": 8.2,
+    "Cover": "🏝️"
+  },
+  {
+    "Title": "The Silence of the Lambs",
+    "Year": 1991,
+    "Genre": "Thriller",
+    "Director": "Jonathan Demme",
+    "Imdb": 8.6,
+    "Cover": "🦋"
+  },
+  {
+    "Title": "Prisoners",
+    "Year": 2013,
+    "Genre": "Thriller",
+    "Director": "Denis Villeneuve",
+    "Imdb": 8.1,
+    "Cover": "🔍"
+  },
+  {
+    "Title": "Nightcrawler",
+    "Year": 2014,
+    "Genre": "Thriller",
+    "Director": "Dan Gilroy",
+    "Imdb": 7.8,
+    "Cover": "📹"
+  },
+  {
+    "Title": "Black Swan",
+    "Year": 2010,
+    "Genre": "Thriller",
+    "Director": "Darren Aronofsky",
+    "Imdb": 8.0,
+    "Cover": "🩰"
+  },
+  {
+    "Title": "The Girl with the Dragon Tattoo",
+    "Year": 2011,
+    "Genre": "Thriller",
+    "Director": "David Fincher",
+    "Imdb": 7.8,
+    "Cover": "🐉"
+  },
+  {
+    "Title": "Memento",
+    "Year": 2000,
+    "Genre": "Thriller",
+    "Director": "Christopher Nolan",
+    "Imdb": 8.4,
+    "Cover": "🧩"
+  },
+  {
+    "Title": "The Sixth Sense",
+    "Year": 1999,
+    "Genre": "Thriller",
+    "Director": "M. Night Shyamalan",
+    "Imdb": 8.2,
+    "Cover": "👁️"
+  },
+
+  {
+    "Title": "The Shawshank Redemption",
+    "Year": 1994,
+    "Genre": "Drama",
+    "Director": "Frank Darabont",
+    "Imdb": 9.3,
+    "Cover": "⛓️"
+  },
+  {
+    "Title": "Forrest Gump",
+    "Year": 1994,
+    "Genre": "Drama",
+    "Director": "Robert Zemeckis",
+    "Imdb": 8.8,
+    "Cover": "🍫"
+  },
+  {
+    "Title": "The Godfather",
+    "Year": 1972,
+    "Genre": "Drama",
+    "Director": "Francis Ford Coppola",
+    "Imdb": 9.2,
+    "Cover": "💼"
+  },
+  {
+    "Title": "Fight Club",
+    "Year": 1999,
+    "Genre": "Drama",
+    "Director": "David Fincher",
+    "Imdb": 8.8,
+    "Cover": "🥊"
+  },
+  {
+    "Title": "The Green Mile",
+    "Year": 1999,
+    "Genre": "Drama",
+    "Director": "Frank Darabont",
+    "Imdb": 8.6,
+    "Cover": "📗"
+  },
+  {
+    "Title": "The Pursuit of Happyness",
+    "Year": 2006,
+    "Genre": "Drama",
+    "Director": "Gabriele Muccino",
+    "Imdb": 8.0,
+    "Cover": "💼"
+  },
+  {
+    "Title": "Good Will Hunting",
+    "Year": 1997,
+    "Genre": "Drama",
+    "Director": "Gus Van Sant",
+    "Imdb": 8.3,
+    "Cover": "🧠"
+  },
+  {
+    "Title": "Whiplash",
+    "Year": 2014,
+    "Genre": "Drama",
+    "Director": "Damien Chazelle",
+    "Imdb": 8.5,
+    "Cover": "🥁"
+  },
+  {
+    "Title": "The Social Network",
+    "Year": 2010,
+    "Genre": "Drama",
+    "Director": "David Fincher",
+    "Imdb": 7.8,
+    "Cover": "💻"
+  },
+  {
+    "Title": "Requiem for a Dream",
+    "Year": 2000,
+    "Genre": "Drama",
+    "Director": "Darren Aronofsky",
+    "Imdb": 8.3,
+    "Cover": "💊"
+  },
+
+  {
+    "Title": "The Hangover",
+    "Year": 2009,
+    "Genre": "Comedy",
+    "Director": "Todd Phillips",
+    "Imdb": 7.7,
+    "Cover": "🍻"
+  },
+  {
+    "Title": "Superbad",
+    "Year": 2007,
+    "Genre": "Comedy",
+    "Director": "Greg Mottola",
+    "Imdb": 7.6,
+    "Cover": "🤣"
+  },
+  {
+    "Title": "Step Brothers",
+    "Year": 2008,
+    "Genre": "Comedy",
+    "Director": "Adam McKay",
+    "Imdb": 6.9,
+    "Cover": "👬"
+  },
+  {
+    "Title": "The Big Lebowski",
+    "Year": 1998,
+    "Genre": "Comedy",
+    "Director": "Joel Coen",
+    "Imdb": 8.1,
+    "Cover": "🎳"
+  },
+  {
+    "Title": "21 Jump Street",
+    "Year": 2012,
+    "Genre": "Comedy",
+    "Director": "Phil Lord & Chris Miller",
+    "Imdb": 7.2,
+    "Cover": "🚓"
+  },
+  {
+    "Title": "Crazy Rich Asians",
+    "Year": 2018,
+    "Genre": "Comedy",
+    "Director": "Jon M. Chu",
+    "Imdb": 7.0,
+    "Cover": "💎"
+  },
+  {
+    "Title": "The Grand Budapest Hotel",
+    "Year": 2014,
+    "Genre": "Comedy",
+    "Director": "Wes Anderson",
+    "Imdb": 8.1,
+    "Cover": "🏨"
+  },
+  {
+    "Title": "Zombieland",
+    "Year": 2009,
+    "Genre": "Comedy",
+    "Director": "Ruben Fleischer",
+    "Imdb": 7.6,
+    "Cover": "🧟"
+  },
+  {
+    "Title": "Anchorman",
+    "Year": 2004,
+    "Genre": "Comedy",
+    "Director": "Adam McKay",
+    "Imdb": 7.2,
+    "Cover": "📺"
+  },
+  {
+    "Title": "Tropic Thunder",
+    "Year": 2008,
+    "Genre": "Comedy",
+    "Director": "Ben Stiller",
+    "Imdb": 7.0,
+    "Cover": "🎥"
+  },
+
+  {
+    "Title": "Interstellar",
+    "Year": 2014,
+    "Genre": "Sci-Fi",
+    "Director": "Christopher Nolan",
+    "Imdb": 8.7,
+    "Cover": "🚀"
+  },
+  {
+    "Title": "Blade Runner 2049",
+    "Year": 2017,
+    "Genre": "Sci-Fi",
+    "Director": "Denis Villeneuve",
+    "Imdb": 8.0,
+    "Cover": "🤖"
+  },
+  {
+    "Title": "The Matrix",
+    "Year": 1999,
+    "Genre": "Sci-Fi",
+    "Director": "Lana & Lilly Wachowski",
+    "Imdb": 8.7,
+    "Cover": "🟩"
+  },
+  {
+    "Title": "Inception",
+    "Year": 2010,
+    "Genre": "Sci-Fi",
+    "Director": "Christopher Nolan",
+    "Imdb": 8.8,
+    "Cover": "🌀"
+  },
+  {
+    "Title": "Arrival",
+    "Year": 2016,
+    "Genre": "Sci-Fi",
+    "Director": "Denis Villeneuve",
+    "Imdb": 7.9,
+    "Cover": "👽"
+  },
+  {
+    "Title": "Ex Machina",
+    "Year": 2014,
+    "Genre": "Sci-Fi",
+    "Director": "Alex Garland",
+    "Imdb": 7.7,
+    "Cover": "🧠🤖"
+  },
+  {
+    "Title": "The Martian",
+    "Year": 2015,
+    "Genre": "Sci-Fi",
+    "Director": "Ridley Scott",
+    "Imdb": 8.0,
+    "Cover": "🌕"
+  },
+  {
+    "Title": "Minority Report",
+    "Year": 2002,
+    "Genre": "Sci-Fi",
+    "Director": "Steven Spielberg",
+    "Imdb": 7.7,
+    "Cover": "🔮"
+  },
+  {
+    "Title": "Edge of Tomorrow",
+    "Year": 2014,
+    "Genre": "Sci-Fi",
+    "Director": "Doug Liman",
+    "Imdb": 7.9,
+    "Cover": "⏳"
+  },
+  {
+    "Title": "Dune",
+    "Year": 2021,
+    "Genre": "Sci-Fi",
+    "Director": "Denis Villeneuve",
+    "Imdb": 8.0,
+    "Cover": "🏜️"
+  },
+
+  {
+    "Title": "Gravity",
+    "Year": 2013,
+    "Genre": "Sci-Fi",
+    "Director": "Alfonso Cuarón",
+    "Imdb": 7.7,
+    "Cover": "🌌"
+  },
+  {
+    "Title": "The Truman Show",
+    "Year": 1998,
+    "Genre": "Drama",
+    "Director": "Peter Weir",
+    "Imdb": 8.2,
+    "Cover": "🎭"
+  },
+  {
+    "Title": "Marriage Story",
+    "Year": 2019,
+    "Genre": "Drama",
+    "Director": "Noah Baumbach",
+    "Imdb": 7.9,
+    "Cover": "💔"
+  }
+]

@@ -514,3 +514,4 @@ C:\Users\mylah\OneDrive - Atlantic TU\MovieApp\MovieExplorer\obj\Debug\net9.0-wi
 C:\Users\mylah\OneDrive - Atlantic TU\MovieApp\MovieExplorer\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 C:\Users\mylah\OneDrive - Atlantic TU\MovieApp\MovieExplorer\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\mylah\OneDrive - Atlantic TU\MovieApp\MovieExplorer\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
+C:\Users\mylah\OneDrive - Atlantic TU\MovieApp\MovieExplorer\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\list_movies.json

@@ -112,6 +112,34 @@ namespace MovieExplorer
 
         }
 
+  
+
+        private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
+        {
+            string searchEntry = searchBarEntry.Text; //get search text from user
+            double.TryParse(searchEntry, out double searchEntryNumber); //converts entry text to number
+            viewModel.FilteredMovies.Clear();//clear the observableColletion
+            
+            // search the list for the entry word
+            for (int i = 0; i < viewModel.Movies.Count; i++)
+            {
+                var movie = viewModel.Movies[i];
+                if (movie != null) 
+                {
+                    //if the title contains the word, add to FilteredMoves observableCollection
+                    if (movie.Title.Contains(searchEntry) || movie.Genre.Contains(searchEntry) || movie.Director.Contains(searchEntry) || movie.Year == searchEntryNumber || movie.Imdb == searchEntryNumber)
+                    {
+
+                        viewModel.FilteredMovies.Add(movie);
+                    }
+                }
+                else 
+                {
+                    viewModel.FilteredMovies = viewModel.Movies; //if the entry field is empty, show all movie again
+                }
+            }
+        }
+
         protected override async void OnAppearing()
         {
             base.OnAppearing();
@@ -121,32 +149,8 @@ namespace MovieExplorer
             {
                 await Task.Delay(50);
                 await viewModel.DownloadMovies();
-               
-              
-            }
-        }
 
-        private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
-        {
-            string searchEntry = searchBarEntry.Text; //get search text from user
-            viewModel.FilteredMovies.Clear();
-            
 
-            for (int i = 0; i < viewModel.Movies.Count; i++)
-            {
-                var movie = viewModel.Movies[i];
-                if (movie != null)
-                {
-                    if (movie.Title.Contains(searchEntry))
-                    {
-
-                        viewModel.FilteredMovies.Add(movie);
-                    }
-                }
-                else 
-                {
-                    viewModel.FilteredMovies = viewModel.Movies;
-                }
             }
         }
     }
