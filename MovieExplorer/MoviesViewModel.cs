@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace MovieExplorer
 {
@@ -13,6 +14,8 @@ namespace MovieExplorer
     {
         private string _url;
         private Movie _selectedMovie;
+
+        private ObservableCollection<Movie> _filteredMovies;
 
         private ObservableCollection<Movie> _movies;
 
@@ -27,6 +30,16 @@ namespace MovieExplorer
             }
         }
 
+        public ObservableCollection<Movie> FilteredMovies
+        {
+            get => _filteredMovies;
+            set
+            {
+                _filteredMovies = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         public int ListMovieSize
         {
@@ -34,16 +47,34 @@ namespace MovieExplorer
             set
             {
                 _listMovieSize = value;
+                OnPropertyChanged();
             }
         }
 
+        //constructor
+        public MoviesViewModel()
+        {
+            Movies = new ObservableCollection<Movie>();
+            FilteredMovies = new ObservableCollection<Movie>();
+            
+        }
+
+        //overloade constructor
         public MoviesViewModel(string url) 
         {
       
             _url = url;
-            Movies = new ObservableCollection<Movie>
+            Movies = new ObservableCollection<Movie>();
+            FilteredMovies = new ObservableCollection<Movie>();
+
+        }
+
+        public void SortMovies(string sortBy)
+        {
+            switch(sortBy)
             {
-            };
+
+            }
         }
 
    
@@ -63,10 +94,13 @@ namespace MovieExplorer
             }
         }
 
+       
+
         public bool IsLoaded { get; private set; } = false;
 
         public async Task DownloadMovies()
         {
+            
             if (!IsLoaded)
             {
                 //set up cache filename
@@ -82,7 +116,8 @@ namespace MovieExplorer
                     foreach(var movie in _movies) // add one movie at a time into observable collection
                     {
                         Movies.Add(movie);
-                        await Task.Delay(1000);  
+                        FilteredMovies.Add(movie);
+                         
                     }                                                                         
                 }
                 else
@@ -94,7 +129,13 @@ namespace MovieExplorer
                         if (response != null && response.IsSuccessStatusCode)
                         {
                             string contents = await response.Content.ReadAsStringAsync();
-                            Movies = JsonSerializer.Deserialize<ObservableCollection<Movie>>(contents);
+                            List<Movie> _movies = JsonSerializer.Deserialize<List<Movie>>(contents); // create list of objects
+                            foreach (var movie in _movies) // add one movie at a time into observable collection
+                            {
+                                Movies.Add(movie);
+                                FilteredMovies.Add(movie);
+
+                            }
                             //save it to the device
                             using FileStream outputStream = File.Create(filename);
                             using StreamWriter writer = new StreamWriter(outputStream);
@@ -110,8 +151,7 @@ namespace MovieExplorer
             }
               
         }
-
-
+        
         public event PropertyChangedEventHandler? PropertyChanged;
 
         protected virtual void OnPropertyChanged(string? propertyName = null)

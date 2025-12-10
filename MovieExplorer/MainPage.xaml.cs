@@ -13,7 +13,7 @@ namespace MovieExplorer
         private bool lightTheme;
         private bool gridCreated = false;
         private MoviesViewModel viewModel;
-        private string url;
+        private string _url;
 
 
 
@@ -21,12 +21,15 @@ namespace MovieExplorer
         public MainPage(string url)
         {
             InitializeComponent();
-            this.url = url;
+            _url = url;
             lightTheme = Preferences.Default.Get("LightTheme", true); //set light theme as default
             viewModel = new MoviesViewModel(url);
+            
             BindingContext = viewModel;
             CreateGrid();
-           
+
+            //lblFile.Text = url; // debugger
+
         }
 
         //change theme
@@ -118,7 +121,32 @@ namespace MovieExplorer
             {
                 await Task.Delay(50);
                 await viewModel.DownloadMovies();
+               
               
+            }
+        }
+
+        private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
+        {
+            string searchEntry = searchBarEntry.Text; //get search text from user
+            viewModel.FilteredMovies.Clear();
+            
+
+            for (int i = 0; i < viewModel.Movies.Count; i++)
+            {
+                var movie = viewModel.Movies[i];
+                if (movie != null)
+                {
+                    if (movie.Title.Contains(searchEntry))
+                    {
+
+                        viewModel.FilteredMovies.Add(movie);
+                    }
+                }
+                else 
+                {
+                    viewModel.FilteredMovies = viewModel.Movies;
+                }
             }
         }
     }

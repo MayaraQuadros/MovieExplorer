@@ -13,7 +13,7 @@
         x:Name="HomeMovies">
         <local:MainPage>
             <x:Arguments>
-                <x:String>https://github.com/MayaraQuadros/MovieExplorer/blob/main/MovieExplorer/Resources/Raw/list_movies.json</x:String>
+                <x:String>https://raw.githubusercontent.com/MayaraQuadros/MovieExplorer/refs/heads/main/MovieExplorer/Resources/Raw/list_movies.json</x:String>
             </x:Arguments>
         </local:MainPage>
     </ShellContent>

@@ -18,15 +18,17 @@
     
     <ScrollView>
         <VerticalStackLayout>
-            
+            <SearchBar x:Name="searchBarEntry" Placeholder="Search for..."
+                      SearchButtonPressed="SearchBar_SearchButtonPressed"/>
             <Label x:Name="lblresultSearch"/>
+            <Label x:Name="lblFile"/>
             <Button x:Name="ToggleThemeButton" Text="Toggle Theme" Margin="0,20,0,20"
                    Clicked="ToggleThemeButton_Clicked" FontAttributes="Bold"
                     WidthRequest="150"/>
             <Label x:Name="lblMoviesList" Text="Movies List" HorizontalOptions="Center"
                    Margin="0,20,0,0" FontSize="Large"/>
             <Grid x:Name="GridMovies" BackgroundColor="DarkBlue">
-                <CollectionView ItemsSource="{Binding Movies}"
+                <CollectionView ItemsSource="{Binding FilteredMovies}"
                            SelectionMode="Single" 
                            SelectedItem="{Binding selectedMovie}"
                            SelectionChanged="CollectionView_SelectionChanged">
@@ -48,7 +50,7 @@
    
 
 
-            <Label x:Name="lblFile"/>
+           
             
 
         </VerticalStackLayout>
