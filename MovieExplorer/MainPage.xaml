@@ -25,24 +25,27 @@
                     WidthRequest="150"/>
             <Label x:Name="lblMoviesList" Text="Movies List" HorizontalOptions="Center"
                    Margin="0,20,0,0" FontSize="Large"/>
-   
-            <CollectionView ItemsSource="{Binding Movies}"
+            <Grid x:Name="GridMovies" BackgroundColor="DarkBlue">
+                <CollectionView ItemsSource="{Binding Movies}"
                            SelectionMode="Single" 
                            SelectedItem="{Binding selectedMovie}"
                            SelectionChanged="CollectionView_SelectionChanged">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding Title}" FontSize="Large" FontAttributes="Bold"/>
-                            <Label Text="{Binding Year}" FontSize="Small"/>
-                            <Label Text="{Binding Genre}" FontSize="Small"/>
-                            <Label Text="{Binding Director}" FontSize="Small"/>
-                            <Label Text="{Binding Imdb}" FontSize="Small"/>
-                            <Label Text="{Binding Cover}" FontSize="Small"/>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Title}" FontSize="Large" FontAttributes="Bold"/>
+                                <Label Text="{Binding Year}" FontSize="Small"/>
+                                <Label Text="{Binding Genre}" FontSize="Small"/>
+                                <Label Text="{Binding Director}" FontSize="Small"/>
+                                <Label Text="{Binding Imdb}" FontSize="Small"/>
+                                <Label Text="{Binding Cover}" FontSize="Small"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Grid>
+   
 
 
             <Label x:Name="lblFile"/>

@@ -11,17 +11,21 @@ namespace MovieExplorer
     public partial class MainPage : ContentPage
     {
         private bool lightTheme;
-        private MoviesViewModel viewModel; 
+        private bool gridCreated = false;
+        private MoviesViewModel viewModel;
+        private string url;
 
 
 
 
-        public MainPage()
+        public MainPage(string url)
         {
             InitializeComponent();
+            this.url = url;
             lightTheme = Preferences.Default.Get("LightTheme", true); //set light theme as default
-            viewModel = new MoviesViewModel();
+            viewModel = new MoviesViewModel(url);
             BindingContext = viewModel;
+            CreateGrid();
            
         }
 
@@ -32,6 +36,39 @@ namespace MovieExplorer
             applyTheme();
             Preferences.Default.Set("LightTheme", lightTheme);
         }
+
+        private void CreateGrid()
+        {
+            if(!gridCreated)
+            {
+                var rows = (viewModel.ListMovieSize / 3); //set number of rowns considering 3 columns
+                for (int i = 0; i < rows; i++)
+                {
+                    GridMovies.AddRowDefinition(new RowDefinition());
+                    GridMovies.AddColumnDefinition(new ColumnDefinition());
+                }
+
+                for (int i = 0; i < rows; ++i)
+                {
+                    for (int j = 0; j < rows; ++j)
+                    {
+                        Border styledBorder = new Border
+                        {
+                            BackgroundColor = Colors.Red,
+                            Stroke = Colors.Black,
+                            StrokeThickness = 3
+
+                        };
+
+                        GridMovies.Add(styledBorder, j, i);
+                    }
+                }
+                gridCreated = true;
+            }
+            
+           
+        }
+        
 
 
         private void applyTheme()
@@ -55,10 +92,7 @@ namespace MovieExplorer
         }
 
 
-        private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

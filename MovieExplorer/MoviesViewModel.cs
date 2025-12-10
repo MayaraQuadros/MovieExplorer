@@ -11,10 +11,12 @@ namespace MovieExplorer
 {
     internal class MoviesViewModel : INotifyPropertyChanged // implement Interface
     {
+        private string _url;
         private Movie _selectedMovie;
 
         private ObservableCollection<Movie> _movies;
 
+        private int _listMovieSize;
         public ObservableCollection<Movie> Movies
         {
             get => _movies;
@@ -26,10 +28,19 @@ namespace MovieExplorer
         }
 
 
-
-
-        public MoviesViewModel() 
+        public int ListMovieSize
         {
+            get { return _listMovieSize; }
+            set
+            {
+                _listMovieSize = value;
+            }
+        }
+
+        public MoviesViewModel(string url) 
+        {
+      
+            _url = url;
             Movies = new ObservableCollection<Movie>
             {
             };
@@ -67,25 +78,28 @@ namespace MovieExplorer
                     using FileStream inputStream = File.OpenRead(filename);
                     using StreamReader reader = new StreamReader(inputStream);
                     string contents = await reader.ReadToEndAsync();
-                    Movies = JsonSerializer.Deserialize<ObservableCollection<Movie>>(contents);
-
+                    List<Movie> _movies = JsonSerializer.Deserialize<List<Movie>>(contents); // create list of objects
+                    foreach(var movie in _movies) // add one movie at a time into observable collection
+                    {
+                        Movies.Add(movie);
+                        await Task.Delay(1000);  
+                    }                                                                         
                 }
                 else
                 {
                     try 
                     {
-                        //download from the raw folder
-                        using var stream = await FileSystem.OpenAppPackageFileAsync("list_movies.json");
-                        using var reader = new StreamReader(stream);
-                        string contents = await reader.ReadToEndAsync(); // read all the content into the string
-                        Movies = JsonSerializer.Deserialize<ObservableCollection<Movie>>(contents);
-
-                        //save it to the device
-                        using FileStream outputStream = File.Create(filename);
-                        using StreamWriter writer = new StreamWriter(outputStream);
-                        await writer.WriteAsync(contents);
-
-
+                        //download from github
+                        var response = await App.HttpClient.GetAsync(_url);
+                        if (response != null && response.IsSuccessStatusCode)
+                        {
+                            string contents = await response.Content.ReadAsStringAsync();
+                            Movies = JsonSerializer.Deserialize<ObservableCollection<Movie>>(contents);
+                            //save it to the device
+                            using FileStream outputStream = File.Create(filename);
+                            using StreamWriter writer = new StreamWriter(outputStream);
+                            await writer.WriteAsync(contents);
+                        }
                     }
                     catch
                     {

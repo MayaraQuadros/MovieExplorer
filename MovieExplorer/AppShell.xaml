@@ -7,8 +7,16 @@
     Title="MovieExplorer">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="Home Movies"
+       
+        Route="MoviesMainPage" 
+        x:Name="HomeMovies">
+        <local:MainPage>
+            <x:Arguments>
+                <x:String>https://github.com/MayaraQuadros/MovieExplorer/blob/main/MovieExplorer/Resources/Raw/list_movies.json</x:String>
+            </x:Arguments>
+        </local:MainPage>
+    </ShellContent>
+        
 
 </Shell>
