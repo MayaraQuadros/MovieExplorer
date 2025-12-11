@@ -95,7 +95,20 @@ namespace MovieExplorer
         }
 
        
-
+        public async Task Favourite(Movie movie)
+        {
+            string filename = Path.Combine(FileSystem.Current.AppDataDirectory, "favourites.json");
+            string jsonContents = JsonSerializer.Serialize(movie);
+            using FileStream outputStream = File.Create(filename);
+            {
+                using StreamWriter writer = new StreamWriter(outputStream);
+                {
+                    await writer.WriteAsync(jsonContents);
+                }
+            }
+           
+           
+        }
         public bool IsLoaded { get; private set; } = false;
 
         public async Task DownloadMovies()
@@ -115,8 +128,10 @@ namespace MovieExplorer
                     List<Movie> _movies = JsonSerializer.Deserialize<List<Movie>>(contents); // create list of objects
                     foreach(var movie in _movies) // add one movie at a time into observable collection
                     {
+                        
                         Movies.Add(movie);
                         FilteredMovies.Add(movie);
+                        ListMovieSize = FilteredMovies.Count; //size of the list
                          
                     }                                                                         
                 }
@@ -134,6 +149,7 @@ namespace MovieExplorer
                             {
                                 Movies.Add(movie);
                                 FilteredMovies.Add(movie);
+                                ListMovieSize = FilteredMovies.Count; //size of the list
 
                             }
                             //save it to the device

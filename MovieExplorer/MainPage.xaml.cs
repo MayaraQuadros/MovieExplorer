@@ -26,7 +26,7 @@ namespace MovieExplorer
             viewModel = new MoviesViewModel(url);
             
             BindingContext = viewModel;
-            CreateGrid();
+            
 
             //lblFile.Text = url; // debugger
 
@@ -38,39 +38,41 @@ namespace MovieExplorer
             lightTheme = !lightTheme;
             applyTheme();
             Preferences.Default.Set("LightTheme", lightTheme);
-        }
+        }//end ToggleThemeButton_Clicked
 
         private void CreateGrid()
         {
             if(!gridCreated)
             {
                 var rows = (viewModel.ListMovieSize / 3); //set number of rowns considering 3 columns
+                lblDebugger.Text = rows.ToString();
                 for (int i = 0; i < rows; i++)
                 {
                     GridMovies.AddRowDefinition(new RowDefinition());
-                    GridMovies.AddColumnDefinition(new ColumnDefinition());
                 }
-
+                for (int i = 0; i < rows; i++)
+                {
+                    GridMovies.AddRowDefinition(new RowDefinition());
+                }
                 for (int i = 0; i < rows; ++i)
                 {
-                    for (int j = 0; j < rows; ++j)
+                    for (int j = 0; j < 3; ++j)
                     {
                         Border styledBorder = new Border
                         {
-                            BackgroundColor = Colors.Red,
                             Stroke = Colors.Black,
                             StrokeThickness = 3
 
                         };
+                        styledBorder.SetValue(Grid.RowProperty, i);
+                        styledBorder.SetValue(Grid.ColumnProperty, j);
 
                         GridMovies.Add(styledBorder, j, i);
                     }
                 }
                 gridCreated = true;
             }
-            
-           
-        }
+        }//end CreateGrid
         
 
 
@@ -82,8 +84,7 @@ namespace MovieExplorer
                 ToggleThemeButton.TextColor = Colors.Black;
                 lblMoviesList.TextColor = Colors.Black;
                 ToggleThemeButton.BackgroundColor = Colors.BlueViolet;
-
-
+              
             }
             else
             {
@@ -92,7 +93,7 @@ namespace MovieExplorer
                 lblMoviesList.TextColor = Colors.LightGrey;
                 ToggleThemeButton.BackgroundColor = Colors.Teal;
             }
-        }
+        }//end ApplyTheme
 
 
        
@@ -110,13 +111,13 @@ namespace MovieExplorer
                 ((CollectionView)sender).SelectedItem = null; // deselect the item in the collection view
             }
 
-        }
+        }//end CollectionView_SelectionChanged
 
-  
+
 
         private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
         {
-            string searchEntry = searchBarEntry.Text; //get search text from user
+            string searchEntry = searchBarEntry.Text.ToLower(); //get search text from user
             double.TryParse(searchEntry, out double searchEntryNumber); //converts entry text to number
             viewModel.FilteredMovies.Clear();//clear the observableColletion
             
@@ -127,10 +128,10 @@ namespace MovieExplorer
                 if (movie != null) 
                 {
                     //if the title contains the word, add to FilteredMoves observableCollection
-                    if (movie.Title.Contains(searchEntry) || movie.Genre.Contains(searchEntry) || movie.Director.Contains(searchEntry) || movie.Year == searchEntryNumber || movie.Imdb == searchEntryNumber)
+                    if (movie.Title.ToLower().Contains(searchEntry) || movie.Genre.ToLower().Contains(searchEntry) || movie.Director.ToLower().Contains(searchEntry) || movie.Year == searchEntryNumber || movie.Imdb == searchEntryNumber)
                     {
-
                         viewModel.FilteredMovies.Add(movie);
+                        
                     }
                 }
                 else 
@@ -138,7 +139,7 @@ namespace MovieExplorer
                     viewModel.FilteredMovies = viewModel.Movies; //if the entry field is empty, show all movie again
                 }
             }
-        }
+        }//end SearchBar_SearchButtonPresse
 
         protected override async void OnAppearing()
         {
@@ -149,9 +150,20 @@ namespace MovieExplorer
             {
                 await Task.Delay(50);
                 await viewModel.DownloadMovies();
+                //CreateGrid();
+                
 
 
             }
+        }//end OnAppearing
+
+        private void favouriteBtn_Clicked(object sender, EventArgs e)
+        {
+           if(sender is Button btn && btn.BindingContext is Movie selectedMovie)
+            {
+                viewModel.Favourite(selectedMovie);
+            }
+   
         }
     }
 }
