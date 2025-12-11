@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MovieExplorer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+238544f00add3b2263681b31e7847f05426b25c9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ab3d16d34ed23b229dc2050eee5612101e7b04df")]
 [assembly: System.Reflection.AssemblyProductAttribute("MovieExplorer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MovieExplorer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

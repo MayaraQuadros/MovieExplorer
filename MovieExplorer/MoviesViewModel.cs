@@ -98,14 +98,21 @@ namespace MovieExplorer
         public async Task Favourite(Movie movie)
         {
             string filename = Path.Combine(FileSystem.Current.AppDataDirectory, "favourites.json");
-            string jsonContents = JsonSerializer.Serialize(movie);
-            using FileStream outputStream = File.Create(filename);
+            if (File.Exists(filename))
             {
-                using StreamWriter writer = new StreamWriter(outputStream);
-                {
-                    await writer.WriteAsync(jsonContents);
-                }
+                string jsonContents = JsonSerializer.Serialize(movie);
+                using StreamWriter writer = new StreamWriter(filename, append: true);
+                await writer.WriteAsync(jsonContents);
+                    
             }
+            else
+            {
+                using FileStream outputStream = File.Create(filename);
+                string jsonContents = JsonSerializer.Serialize(movie);
+                using StreamWriter writer = new StreamWriter(outputStream);
+                await writer.WriteAsync(jsonContents);
+            }
+                
            
            
         }
