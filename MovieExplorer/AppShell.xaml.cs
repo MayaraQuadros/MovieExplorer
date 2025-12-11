@@ -6,6 +6,7 @@
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(MovieDetailPage), typeof(MovieDetailPage)); // register the route
+            Routing.RegisterRoute(nameof(FavouritePage), typeof(FavouritePage));
         }
     }
 }

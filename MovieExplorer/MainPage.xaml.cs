@@ -115,31 +115,7 @@ namespace MovieExplorer
 
 
 
-        private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
-        {
-            string searchEntry = searchBarEntry.Text.ToLower(); //get search text from user
-            double.TryParse(searchEntry, out double searchEntryNumber); //converts entry text to number
-            viewModel.FilteredMovies.Clear();//clear the observableColletion
-            
-            // search the list for the entry word
-            for (int i = 0; i < viewModel.Movies.Count; i++)
-            {
-                var movie = viewModel.Movies[i];
-                if (movie != null) 
-                {
-                    //if the title contains the word, add to FilteredMoves observableCollection
-                    if (movie.Title.ToLower().Contains(searchEntry) || movie.Genre.ToLower().Contains(searchEntry) || movie.Director.ToLower().Contains(searchEntry) || movie.Year == searchEntryNumber || movie.Imdb == searchEntryNumber)
-                    {
-                        viewModel.FilteredMovies.Add(movie);
-                        
-                    }
-                }
-                else 
-                {
-                    viewModel.FilteredMovies = viewModel.Movies; //if the entry field is empty, show all movie again
-                }
-            }
-        }//end SearchBar_SearchButtonPresse
+       
 
         protected override async void OnAppearing()
         {
@@ -157,13 +133,44 @@ namespace MovieExplorer
             }
         }//end OnAppearing
 
-        private void favouriteBtn_Clicked(object sender, EventArgs e)
+        private void favouriteMovieBtn_Clicked(object sender, EventArgs e)
         {
            if(sender is Button btn && btn.BindingContext is Movie selectedMovie)
             {
                 viewModel.Favourite(selectedMovie);
             }
    
+        }
+
+        private async void favouriteListBtn_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(FavouritePage)); 
+        }
+
+        private void searchBarEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchEntry = searchBarEntry.Text.ToLower(); //get search text from user
+            
+            viewModel.FilteredMovies.Clear();//clear the observableColletion
+
+            // search the list for the entry word
+            for (int i = 0; i < viewModel.Movies.Count; i++)
+            {
+                var movie = viewModel.Movies[i];
+                if (movie != null)
+                {
+                    //if the title contains the word, add to FilteredMoves observableCollection
+                    if (movie.Title.ToLower().Contains(searchEntry) || movie.Genre.ToLower().Contains(searchEntry) || movie.Director.ToLower().Contains(searchEntry) || movie.Year.ToString().Contains(searchEntry) || movie.Imdb.ToString().Contains(searchEntry))
+                    {
+                        viewModel.FilteredMovies.Add(movie);
+
+                    }
+                }
+                else
+                {
+                    viewModel.FilteredMovies = viewModel.Movies; //if the entry field is empty, show all movie again
+                }
+            }
         }
     }
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieExplorer.FavouritePage"
+             Title="FavouritePage">
+    <ScrollView>
+        <VerticalStackLayout>
+            <HorizontalStackLayout Spacing="40">
+                <SearchBar x:Name="searchBarEntryFavourite" Placeholder="Search movies by Title, Genre, Year, Director or IMDB rating"
+                SearchButtonPressed="searchBarEntryFavourite_SearchButtonPressed" HorizontalOptions="Start" WidthRequest="500"/>
+               
+            </HorizontalStackLayout>
+            <Label x:Name="lblDebugger" Text="{Binding Message}" TextColor="Black"/>
+            <Label x:Name="lblMoviesList" Text="Movies" HorizontalOptions="Center"
+               Margin="0,40,0,40" FontSize="Large" TextColor="Black"/>
+            <Grid x:Name="GridMovies" BackgroundColor="LightGreen">
+                <CollectionView ItemsSource="{Binding FavouriteMovies}"
+                       SelectionMode="Single" 
+                       SelectedItem="{Binding selectedMovie}"
+                       SelectionChanged="CollectionView_SelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Title}" FontSize="Large" FontAttributes="Bold"/>
+                                <Label Text="{Binding Year}" FontSize="Small"/>
+                                <Label Text="{Binding Genre}" FontSize="Small"/>
+                                <Label Text="{Binding Director}" FontSize="Small"/>
+                                <Label Text="{Binding Imdb}" FontSize="Small"/>
+                                <Label Text="{Binding Cover}" FontSize="Small"/>
+                                
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+
+            </Grid>
+
+
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

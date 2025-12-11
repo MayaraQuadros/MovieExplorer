@@ -22,7 +22,7 @@ public partial class MovieDetailPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        BindingContext = MovieProperty;
+         BindingContext = MovieProperty;
         await Task.Delay(50);
     }
 

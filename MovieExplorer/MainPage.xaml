@@ -20,16 +20,17 @@
         <VerticalStackLayout>
             <HorizontalStackLayout Spacing="40">
                 <SearchBar x:Name="searchBarEntry" Placeholder="Search movies by Title, Genre, Year, Director or IMDB rating"
-                    SearchButtonPressed="SearchBar_SearchButtonPressed" HorizontalOptions="Start" WidthRequest="500"/>
+                    TextChanged="searchBarEntry_TextChanged"  HorizontalOptions="Start" WidthRequest="500" TextColor="Black"/>
                 <Button x:Name="ToggleThemeButton" Text="Toggle Theme" 
                         Clicked="ToggleThemeButton_Clicked" FontAttributes="Bold" 
                         WidthRequest="150"/>
-                <Button x:Name="favouriteBtn" Text="Favourites" 
+                <Button x:Name="favouriteListBtn" Text="Favourites" 
+                        Clicked="favouriteListBtn_Clicked"
                         FontAttributes="Bold" 
                         WidthRequest="150"/>    
 
             </HorizontalStackLayout>
-            <Label x:Name="lblDebugger"/>
+            <Label x:Name="lblDebugger" Text="{Binding Message}" TextColor="Black"/>
             <Label x:Name="lblMoviesList" Text="Movies" HorizontalOptions="Center"
                    Margin="0,40,0,40" FontSize="Large" TextColor="Black"/>
             <Grid x:Name="GridMovies" BackgroundColor="LightGreen">
@@ -46,8 +47,8 @@
                                 <Label Text="{Binding Director}" FontSize="Small"/>
                                 <Label Text="{Binding Imdb}" FontSize="Small"/>
                                 <Label Text="{Binding Cover}" FontSize="Small"/>
-                                <Button x:Name="favouritebtn" Text="Favourite" 
-                                        Clicked="favouriteBtn_Clicked" WidthRequest="100" HorizontalOptions="Start"
+                                <Button x:Name="favouriteMoviebtn" Text="Favourite" 
+                                        Clicked="favouriteMovieBtn_Clicked" WidthRequest="100" HorizontalOptions="Start"
                                         Margin="0,10,0,0"/>
                             </StackLayout>
                         </DataTemplate>
