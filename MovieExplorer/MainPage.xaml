@@ -31,7 +31,9 @@
 
             </HorizontalStackLayout>
             <Label x:Name="lblDebugger" Text="{Binding Message}" TextColor="Black"/>
-            <Label x:Name="lblMoviesList" Text="Movies" HorizontalOptions="Center"
+            <Label x:Name="lblUsername" HorizontalOptions="Center" TextColor="Black"/>
+            <Label x:Name="lblMoviesList" Text="Movies" IsVisible="False"
+                   HorizontalOptions="Center"
                    Margin="0,40,0,40" FontSize="Large" TextColor="Black"/>
             <Grid x:Name="GridMovies" BackgroundColor="LightGreen">
                 <CollectionView ItemsSource="{Binding FilteredMovies}"

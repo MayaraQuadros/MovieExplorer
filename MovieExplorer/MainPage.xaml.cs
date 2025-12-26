@@ -124,6 +124,12 @@ namespace MovieExplorer
             //checks if there is viewModel object and if the file was already downloade
             if (viewModel != null && !viewModel.IsLoaded)
             {
+                string username = Preferences.Default.Get("username", "");
+                lblUsername.Text = $"Hi {username}! Are you ready?";
+                await Task.Delay(3000);
+                lblUsername.IsVisible = false;
+                lblMoviesList.IsVisible = true;
+
                 await Task.Delay(50);
                 await viewModel.DownloadMovies();
                 //CreateGrid();
