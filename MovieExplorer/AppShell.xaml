@@ -4,8 +4,10 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MovieExplorer"
-    Title="MovieExplorer">
+    Title="MovieExplorer"
+    Shell.FlyoutBehavior="Flyout">
 
+   
     <ShellContent
         Title="Home Movies"
        
@@ -17,6 +19,12 @@
             </x:Arguments>
         </local:MainPage>
     </ShellContent>
-        
+    <FlyoutItem Title="Settings">
+        <ShellContent
+     Title="Settings"
+     ContentTemplate="{DataTemplate local:SettingsPage}"
+     Route="SettingsPage" />
+    </FlyoutItem>
+
 
 </Shell>

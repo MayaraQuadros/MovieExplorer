@@ -124,7 +124,7 @@ namespace MovieExplorer
             //checks if there is viewModel object and if the file was already downloade
             if (viewModel != null && !viewModel.IsLoaded)
             {
-                string username = Preferences.Default.Get("username", "");
+                string username = Preferences.Default.Get("username", ""); //get the name saved in preferences
                 lblUsername.Text = $"Hi {username}! Are you ready?";
                 await Task.Delay(3000);
                 lblUsername.IsVisible = false;
@@ -138,6 +138,15 @@ namespace MovieExplorer
 
             }
         }//end OnAppearing
+
+        private void TextSizeChange()
+        {
+            // Load settings using SettingsManager.LoadSettings()
+            var settings = SettingsManager.LoadSettings();
+
+            
+
+        }
 
         private void favouriteMovieBtn_Clicked(object sender, EventArgs e)
         {
@@ -177,6 +186,11 @@ namespace MovieExplorer
                     viewModel.FilteredMovies = viewModel.Movies; //if the entry field is empty, show all movie again
                 }
             }
+        }//end SearchBarEntry
+
+        private async void OnSettings_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(SettingsPage));
         }
     }
 }

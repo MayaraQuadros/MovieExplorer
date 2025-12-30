@@ -13,6 +13,7 @@
 
             <Color x:Key="PageBackgroundColor">#FAFAFA</Color>
             
+           
         </ResourceDictionary>
     </ContentPage.Resources>
     
@@ -27,7 +28,12 @@
                 <Button x:Name="favouriteListBtn" Text="Favourites" 
                         Clicked="favouriteListBtn_Clicked"
                         FontAttributes="Bold" 
-                        WidthRequest="150"/>    
+                        WidthRequest="150"/>
+                <!-- Settings button -->
+                <Button Text="Settings"
+                AbsoluteLayout.LayoutBounds="10,10,100,50"
+                AbsoluteLayout.LayoutFlags="None"
+                Clicked="OnSettings_Clicked"/>
 
             </HorizontalStackLayout>
             <Label x:Name="lblDebugger" Text="{Binding Message}" TextColor="Black"/>
@@ -40,31 +46,40 @@
                            SelectionMode="Single" 
                            SelectedItem="{Binding selectedMovie}"
                            SelectionChanged="CollectionView_SelectionChanged">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical"
+                                         Span="2"/>
+                    </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Padding="10">
-                                <Label Text="{Binding Title}" FontSize="Large" FontAttributes="Bold"/>
-                                <Label Text="{Binding Year}" FontSize="Small"/>
-                                <Label Text="{Binding Genre}" FontSize="Small"/>
-                                <Label Text="{Binding Director}" FontSize="Small"/>
-                                <Label Text="{Binding Imdb}" FontSize="Small"/>
-                                <Label Text="{Binding Cover}" FontSize="Small"/>
-                                <Button x:Name="favouriteMoviebtn" Text="Favourite" 
-                                        Clicked="favouriteMovieBtn_Clicked" WidthRequest="100" HorizontalOptions="Start"
-                                        Margin="0,10,0,0"/>
-                            </StackLayout>
+                            <Frame Margin="8"
+                                   Padding="10"
+                                   CornerRadius="12"
+                                   BorderColor="LightGray"
+                                   BackgroundColor="BlanchedAlmond">
+                                
+
+                                <Grid RowDefinitions="*,Auto">
+                                    <VerticalStackLayout Grid.Row="0" Spacing="4">
+                                        <Label Text="{Binding Title}" FontSize="35" HorizontalOptions="Center" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Year}"  HorizontalOptions="Center" FontSize="20"/>
+                                        <Label Text="{Binding Genre}"  HorizontalOptions="Center" FontSize="20"/>
+                                        <Label Text="{Binding Director}"  HorizontalOptions="Center" FontSize="20"/>
+                                        <Label Text="{Binding Imdb}"  HorizontalOptions="Center" FontSize="20"/>
+                                        <Label Text="{Binding Cover}"  HorizontalOptions="Center" FontSize="20"/>
+                                    </VerticalStackLayout>
+
+                                    <Button x:Name="favouriteMoviebtn" Text="Favourite" 
+                                            Clicked="favouriteMovieBtn_Clicked" WidthRequest="100" HorizontalOptions="Start"
+                                            Margin="0,20,0,0"
+                                            Grid.Row="1"/>
+
+                                </Grid>
+                            </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-                
-
             </Grid>
-   
-
-
-           
-            
-
         </VerticalStackLayout>
     </ScrollView>
 
