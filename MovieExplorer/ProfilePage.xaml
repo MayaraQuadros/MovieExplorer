@@ -3,13 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MovieExplorer.ProfilePage"
              Title="ProfilePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to MoviesHub! What's your name?"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Entry x:Name="entryUsername" WidthRequest="300"/>
-        <Button Text="Start" WidthRequest="300"
-                Clicked="Button_Clicked"/>
-    </VerticalStackLayout>
+
+
+    <Grid>
+        <Image Source="film_strip_aged.png"
+           Aspect="Fill"
+           VerticalOptions="Start"/>
+        <VerticalStackLayout>
+            <Label 
+                Text="Welcome to MoviesHub!" FontAttributes="Bold"
+                FontSize="40"
+                VerticalOptions="Center" HorizontalOptions="Center"
+                Margin="0,20,0,40" TextColor="Black"
+                />
+            <Label Text="What's your name?"
+                   FontSize="30"
+                    VerticalOptions="Center" HorizontalOptions="Center"
+                    Margin="0,20,0,40"
+                   TextColor="Black"/>
+            <Border Stroke="LightGray"
+                    StrokeThickness="1"
+                    BackgroundColor="White"
+                    WidthRequest="305">
+                <Entry  x:Name="entryUsername"
+                        BackgroundColor="Transparent"
+                        TextColor="Black"
+                        WidthRequest="300"/>
+            </Border>
+            <Button Text="Start" WidthRequest="300"
+                    Clicked="Button_Clicked"
+                    Margin="0,50"/>
+
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

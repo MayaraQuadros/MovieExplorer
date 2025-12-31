@@ -41,7 +41,7 @@
             <Label x:Name="lblMoviesList" Text="Movies" IsVisible="False"
                    HorizontalOptions="Center"
                    Margin="0,40,0,40" FontSize="Large" TextColor="Black"/>
-            <Grid x:Name="GridMovies" BackgroundColor="LightGreen">
+            
                 <CollectionView ItemsSource="{Binding FilteredMovies}"
                            SelectionMode="Single" 
                            SelectedItem="{Binding selectedMovie}"
@@ -65,21 +65,25 @@
                                         <Label Text="{Binding Year}"  HorizontalOptions="Center" FontSize="20"/>
                                         <Label Text="{Binding Genre}"  HorizontalOptions="Center" FontSize="20"/>
                                         <Label Text="{Binding Director}"  HorizontalOptions="Center" FontSize="20"/>
-                                        <Label Text="{Binding Imdb}"  HorizontalOptions="Center" FontSize="20"/>
+                                        <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}"  HorizontalOptions="Center" FontSize="20"/>
                                         <Label Text="{Binding Cover}"  HorizontalOptions="Center" FontSize="20"/>
                                     </VerticalStackLayout>
 
-                                    <Button x:Name="favouriteMoviebtn" Text="Favourite" 
-                                            Clicked="favouriteMovieBtn_Clicked" WidthRequest="100" HorizontalOptions="Start"
-                                            Margin="0,20,0,0"
-                                            Grid.Row="1"/>
+                                    
+                                    <ImageButton Source="love.png"
+                                                 Clicked="favouriteMovieBtn_Clicked"
+                                                 Grid.Row="1"
+                                                 WidthRequest="15"
+                                                 HeightRequest="15"
+                                                 BackgroundColor="Transparent"
+                                                 HorizontalOptions="Start"/>
 
                                 </Grid>
                             </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-            </Grid>
+           
         </VerticalStackLayout>
     </ScrollView>
 

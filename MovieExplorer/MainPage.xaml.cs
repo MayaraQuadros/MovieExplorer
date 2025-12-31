@@ -40,6 +40,7 @@ namespace MovieExplorer
             Preferences.Default.Set("LightTheme", lightTheme);
         }//end ToggleThemeButton_Clicked
 
+        /*
         private void CreateGrid()
         {
             if(!gridCreated)
@@ -73,6 +74,7 @@ namespace MovieExplorer
                 gridCreated = true;
             }
         }//end CreateGrid
+        */
         
 
 
@@ -148,13 +150,18 @@ namespace MovieExplorer
 
         }
 
-        private void favouriteMovieBtn_Clicked(object sender, EventArgs e)
+        private async void favouriteMovieBtn_Clicked(object sender, EventArgs e)
         {
-           if(sender is Button btn && btn.BindingContext is Movie selectedMovie)
+           
+           if(sender is ImageButton btn && btn.BindingContext is Movie selectedMovie)
             {
                 viewModel.Favourite(selectedMovie);
+
+                await btn.ScaleTo(2, 300);
+                await btn.ScaleTo(1, 300);
+
             }
-   
+        
         }
 
         private async void favouriteListBtn_Clicked(object sender, EventArgs e)

@@ -130,16 +130,20 @@ namespace MovieExplorer
             if (File.Exists(filename))
             {
                 string contents = ReadFile(filename);//read all the content
-                //serialize with indentation
-                string jsonContents = "," + JsonSerializer.Serialize(movie, new JsonSerializerOptions { WriteIndented = true });
-                
-                
-                contents += jsonContents; // append the new favourite
 
-                using StreamWriter writer = new StreamWriter(filename);
-                await writer.WriteAsync(contents); //write to file
+                if (!contents.Contains(movie.Title)) // only appends if the movie is not in the list
+                {
+                    //serialize with indentation
+                    string jsonContents = "," + JsonSerializer.Serialize(movie, new JsonSerializerOptions { WriteIndented = true });
 
-                //Message = jsonContents; debugger
+
+                    contents += jsonContents; // append the new favourite
+
+                    using StreamWriter writer = new StreamWriter(filename);
+                    await writer.WriteAsync(contents); //write to file
+
+                    //Message = jsonContents; debugger
+                }
             }
             else 
             {
