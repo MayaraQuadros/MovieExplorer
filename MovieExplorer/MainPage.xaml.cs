@@ -100,6 +100,7 @@ namespace MovieExplorer
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+            favouriteListBtn.Rotation = 0; //reset the rotation
 
             applyTheme();
 
@@ -122,7 +123,7 @@ namespace MovieExplorer
 
         }
 
-        private async void favouriteMovieBtn_Clicked(object sender, EventArgs e)
+        public async void favouriteMovieBtn_Clicked(object sender, EventArgs e)
         {
            
            if(sender is ImageButton btn && btn.BindingContext is Movie selectedMovie)
@@ -138,6 +139,9 @@ namespace MovieExplorer
 
         private async void favouriteListBtn_Clicked(object sender, EventArgs e)
         {
+           
+            await favouriteListBtn.RotateTo(360, 500);
+            await Task.Delay(50);
             await Shell.Current.GoToAsync(nameof(FavouritePage)); 
         }
 

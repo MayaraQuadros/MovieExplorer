@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MovieExplorer.MovieDetailPage"
-             x:Name="MovieDetail">
+             x:Name="MovieDetail"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
 
    
     <Grid Padding="20" ColumnSpacing="30" ColumnDefinitions="*,*" RowDefinitions="Auto,40,*">
@@ -30,7 +31,8 @@
             <Label Text="{Binding Director}" FontSize="Medium" HorizontalOptions="Start"/>
             <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" FontSize="Medium" HorizontalOptions="Start"/>
             <Button Text="Back" Clicked="BackButton_Clicked" WidthRequest="100"
-                HorizontalOptions="Start" Margin="0, 100"/>
+                    HorizontalOptions="Start" Margin="0, 100" 
+                    BackgroundColor="Black" TextColor="White"/>
         </VerticalStackLayout>
     </Grid>
 

@@ -8,16 +8,20 @@
     
     <ScrollView>
         <VerticalStackLayout>
-            <HorizontalStackLayout Spacing="40">
+            <Grid ColumnDefinitions="*, auto" Padding="5">
+
                 <SearchBar x:Name="searchBarEntry" Placeholder="Search movies by Title, Genre, Year, Director or IMDB rating"
                             TextChanged="searchBarEntry_TextChanged"  HorizontalOptions="Start" 
-                           WidthRequest="500" TextColor="Black" BackgroundColor="WhiteSmoke"/>
-                
-                <Button x:Name="favouriteListBtn" Text="Favourites" 
-                        Clicked="favouriteListBtn_Clicked"
-                        FontAttributes="Bold" 
-                        WidthRequest="150"/>
-            </HorizontalStackLayout>
+                           WidthRequest="500" TextColor="Black"
+                           Grid.Column="0" BackgroundColor="WhiteSmoke"/>
+
+                <ImageButton x:Name="favouriteListBtn" Source="heart.png" 
+                        Clicked="favouriteListBtn_Clicked" BackgroundColor="Transparent"
+                        HeightRequest="40"
+                        WidthRequest="40"
+                        Grid.Column="1"
+                        Margin="0,0,10,10"/>
+            </Grid>
             <Label x:Name="lblDebugger" Text="{Binding Message}" TextColor="Black"/>
             <Label x:Name="lblUsername" HorizontalOptions="Center" TextColor="{DynamicResource TextColor}"
                    FontAttributes="Bold" FontSize="25" Margin="0,30,0,30"/>
