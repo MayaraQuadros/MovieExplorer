@@ -40,43 +40,18 @@ namespace MovieExplorer
             Preferences.Default.Set("LightTheme", lightTheme);
         }//end ToggleThemeButton_Clicked
 
-        /*
-        private void CreateGrid()
+        private async Task Greetings()
         {
-            if(!gridCreated)
-            {
-                var rows = (viewModel.ListMovieSize / 3); //set number of rowns considering 3 columns
-                lblDebugger.Text = rows.ToString();
-                for (int i = 0; i < rows; i++)
-                {
-                    GridMovies.AddRowDefinition(new RowDefinition());
-                }
-                for (int i = 0; i < rows; i++)
-                {
-                    GridMovies.AddRowDefinition(new RowDefinition());
-                }
-                for (int i = 0; i < rows; ++i)
-                {
-                    for (int j = 0; j < 3; ++j)
-                    {
-                        Border styledBorder = new Border
-                        {
-                            Stroke = Colors.Black,
-                            StrokeThickness = 3
-
-                        };
-                        styledBorder.SetValue(Grid.RowProperty, i);
-                        styledBorder.SetValue(Grid.ColumnProperty, j);
-
-                        GridMovies.Add(styledBorder, j, i);
-                    }
-                }
-                gridCreated = true;
-            }
-        }//end CreateGrid
-        */
-        
-
+            string username = Preferences.Default.Get("username", ""); //get the name saved in preferences
+            lblUsername.Text = $"Hi {username}! Are you ready?";
+            await Task.Delay(3000);
+            await lblUsername.FadeTo(0, 1000);
+            lblUsername.Text = "Movies";
+            await Task.Delay(50);
+            lblUsername.ScaleTo(1.5, 500);
+            await lblUsername.FadeTo(1, 500);
+            
+        }
 
         private void applyTheme()
         {
@@ -126,15 +101,11 @@ namespace MovieExplorer
             //checks if there is viewModel object and if the file was already downloade
             if (viewModel != null && !viewModel.IsLoaded)
             {
-                string username = Preferences.Default.Get("username", ""); //get the name saved in preferences
-                lblUsername.Text = $"Hi {username}! Are you ready?";
-                await Task.Delay(3000);
-                lblUsername.IsVisible = false;
-                lblMoviesList.IsVisible = true;
+                await Greetings();
 
                 await Task.Delay(50);
                 await viewModel.DownloadMovies();
-                //CreateGrid();
+                
                 
 
 

@@ -21,7 +21,8 @@
         <VerticalStackLayout>
             <HorizontalStackLayout Spacing="40">
                 <SearchBar x:Name="searchBarEntry" Placeholder="Search movies by Title, Genre, Year, Director or IMDB rating"
-                    TextChanged="searchBarEntry_TextChanged"  HorizontalOptions="Start" WidthRequest="500" TextColor="Black"/>
+                            TextChanged="searchBarEntry_TextChanged"  HorizontalOptions="Start" 
+                           WidthRequest="500" TextColor="Black" BackgroundColor="WhiteSmoke"/>
                 <Button x:Name="ToggleThemeButton" Text="Toggle Theme" 
                         Clicked="ToggleThemeButton_Clicked" FontAttributes="Bold" 
                         WidthRequest="150"/>
@@ -29,61 +30,64 @@
                         Clicked="favouriteListBtn_Clicked"
                         FontAttributes="Bold" 
                         WidthRequest="150"/>
-                <!-- Settings button -->
-                <Button Text="Settings"
-                AbsoluteLayout.LayoutBounds="10,10,100,50"
-                AbsoluteLayout.LayoutFlags="None"
-                Clicked="OnSettings_Clicked"/>
-
             </HorizontalStackLayout>
             <Label x:Name="lblDebugger" Text="{Binding Message}" TextColor="Black"/>
-            <Label x:Name="lblUsername" HorizontalOptions="Center" TextColor="Black"/>
+            <Label x:Name="lblUsername" HorizontalOptions="Center" TextColor="Black"
+                   FontAttributes="Bold" FontSize="25" Margin="0,30,0,30"/>
             <Label x:Name="lblMoviesList" Text="Movies" IsVisible="False"
                    HorizontalOptions="Center"
-                   Margin="0,40,0,40" FontSize="Large" TextColor="Black"/>
-            
-                <CollectionView ItemsSource="{Binding FilteredMovies}"
-                           SelectionMode="Single" 
-                           SelectedItem="{Binding selectedMovie}"
-                           SelectionChanged="CollectionView_SelectionChanged">
-                    <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical"
-                                         Span="2"/>
-                    </CollectionView.ItemsLayout>
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Frame Margin="8"
-                                   Padding="10"
-                                   CornerRadius="12"
-                                   BorderColor="LightGray"
-                                   BackgroundColor="BlanchedAlmond">
-                                
+                   Margin="0,40,0,40" FontSize="40" TextColor="Black"
+                   FontAttributes="Bold"/>
 
-                                <Grid RowDefinitions="*,Auto">
-                                    <VerticalStackLayout Grid.Row="0" Spacing="4">
-                                        <Label Text="{Binding Title}" FontSize="35" HorizontalOptions="Center" FontAttributes="Bold"/>
-                                        <Label Text="{Binding Year}"  HorizontalOptions="Center" FontSize="20"/>
-                                        <Label Text="{Binding Genre}"  HorizontalOptions="Center" FontSize="20"/>
-                                        <Label Text="{Binding Director}"  HorizontalOptions="Center" FontSize="20"/>
-                                        <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}"  HorizontalOptions="Center" FontSize="20"/>
-                                        <Label Text="{Binding Cover}"  HorizontalOptions="Center" FontSize="20"/>
-                                    </VerticalStackLayout>
+            <CollectionView ItemsSource="{Binding FilteredMovies}"
+                        SelectionMode="Single" 
+                        SelectedItem="{Binding selectedMovie}"
+                        SelectionChanged="CollectionView_SelectionChanged">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                        Span="2" HorizontalItemSpacing="20" VerticalItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="8"
+                                Padding="10"
+                                StrokeShape="RoundRectangle 12"
+                                StrokeThickness="1"
+                                BackgroundColor="DarkGoldenrod"
+                                >
+                            <Border.Shadow>
+                                <Shadow Brush="Black"
+                                        Offset="0,6"
+                                        Radius="12"
+                                        Opacity="0.5" />       
+                            </Border.Shadow>
 
+
+                            <Grid RowDefinitions="*,Auto">
+                                <VerticalStackLayout Grid.Row="0" Spacing="4">
+                                    <Label Text="{Binding Title}" FontSize="35" TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Year}" TextColor="Black"  HorizontalOptions="Center" FontSize="20"/>
+                                    <Label Text="{Binding Genre}" TextColor="Black"  HorizontalOptions="Center" FontSize="20"/>
+                                    <Label Text="{Binding Director}" TextColor="Black"  HorizontalOptions="Center" FontSize="20"/>
+                                    <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" TextColor="Black"  HorizontalOptions="Center" FontSize="20"/>
                                     
-                                    <ImageButton Source="love.png"
-                                                 Clicked="favouriteMovieBtn_Clicked"
-                                                 Grid.Row="1"
-                                                 WidthRequest="15"
-                                                 HeightRequest="15"
-                                                 BackgroundColor="Transparent"
-                                                 HorizontalOptions="Start"/>
+                                </VerticalStackLayout>
 
-                                </Grid>
-                            </Frame>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-           
+
+                                <ImageButton Source="love.png"
+                                                Clicked="favouriteMovieBtn_Clicked"
+                                                Grid.Row="1"
+                                                WidthRequest="15"
+                                                HeightRequest="15"
+                                                BackgroundColor="Transparent"
+                                                HorizontalOptions="Start"/>
+
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
         </VerticalStackLayout>
     </ScrollView>
 
