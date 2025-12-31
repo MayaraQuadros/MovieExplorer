@@ -10,8 +10,7 @@ namespace MovieExplorer
 {
     public partial class MainPage : ContentPage
     {
-        private bool lightTheme;
-        private bool gridCreated = false;
+      
         private MoviesViewModel viewModel;
         private string _url;
 
@@ -22,7 +21,6 @@ namespace MovieExplorer
         {
             InitializeComponent();
             _url = url;
-            lightTheme = Preferences.Default.Get("LightTheme", true); //set light theme as default
             viewModel = new MoviesViewModel(url);
             
             BindingContext = viewModel;
@@ -32,13 +30,8 @@ namespace MovieExplorer
 
         }
 
-        //change theme
-        private void ToggleThemeButton_Clicked(object sender, EventArgs e)
-        {
-            lightTheme = !lightTheme;
-            applyTheme();
-            Preferences.Default.Set("LightTheme", lightTheme);
-        }//end ToggleThemeButton_Clicked
+        
+        
 
         private async Task Greetings()
         {
@@ -55,21 +48,31 @@ namespace MovieExplorer
 
         private void applyTheme()
         {
-            if (lightTheme)
+            // TODO: Load settings using SettingsManager.LoadSettings()
+            var settings = SettingsManager.LoadSettings();
+
+            // TODO: Apply background color using dynamic resources
+            // Hint: Application.Current.Resources["BackgroundColor"] = Color.FromArgb(...)
+            if (!string.IsNullOrEmpty(settings.BackgroundColorFrame))
             {
-                Resources["PageBackgroundColor"] = Resources["LightBackgroundColor"];
-                ToggleThemeButton.TextColor = Colors.Black;
-                lblMoviesList.TextColor = Colors.Black;
-                ToggleThemeButton.BackgroundColor = Colors.BlueViolet;
-              
+                Resources["ThemeBGColorFrame"] = 
+                Color.FromArgb(settings.BackgroundColorFrame);
             }
-            else
+            if (!string.IsNullOrEmpty(settings.TextColor))
             {
-                Resources["PageBackgroundColor"] = Resources["DarkBackgroundColor"];
-                ToggleThemeButton.TextColor = Colors.LightGray;
-                lblMoviesList.TextColor = Colors.LightGrey;
-                ToggleThemeButton.BackgroundColor = Colors.Teal;
+                Resources["TextColor"] =
+                Color.FromArgb(settings.TextColor);
             }
+            if (!string.IsNullOrEmpty(settings.FavouriteIcon))
+            {
+                Resources["FavouriteIcon"] = settings.FavouriteIcon;
+            }
+            if (!string.IsNullOrEmpty(settings.BackgroundColor))
+            {
+                Resources["PageBackgroundColor"] =
+                Color.FromArgb(settings.BackgroundColor);
+            }
+
         }//end ApplyTheme
 
 
@@ -98,6 +101,8 @@ namespace MovieExplorer
         {
             base.OnAppearing();
 
+            applyTheme();
+
             //checks if there is viewModel object and if the file was already downloade
             if (viewModel != null && !viewModel.IsLoaded)
             {
@@ -105,10 +110,6 @@ namespace MovieExplorer
 
                 await Task.Delay(50);
                 await viewModel.DownloadMovies();
-                
-                
-
-
             }
         }//end OnAppearing
 

@@ -19,6 +19,49 @@ public partial class SettingsPage : ContentPage
             SizeLabel.Text = $"{(int)e.NewValue}";
     }
 
+    // Handles Theme button clicks. Updates the BackgroundColor setting.
+    private void OnThemeSelected(object sender, EventArgs e)
+    {
+        if(sender is Button button)
+        {
+            string genre = button.Text;
+            switch(genre)
+            {
+                case "Romance":
+                    currentSettings.BackgroundColorFrame = "#b76f6a";
+                    currentSettings.BackgroundColor = "#F2D6D3";
+                    currentSettings.TextColor = "#000000";
+                    currentSettings.FavouriteIcon = "romance_icon.png";
+
+                    break;
+                case "Western":
+                    currentSettings.BackgroundColorFrame = "#D2B48C";
+                    currentSettings.BackgroundColor = "#F5E9D6";
+                    currentSettings.TextColor = "#000000";
+                    currentSettings.FavouriteIcon = "western_icon.png";
+                    break;
+                case "Thriller":
+                    currentSettings.BackgroundColorFrame = "#0B1C2D";
+                    currentSettings.BackgroundColor = "#2E4057";
+                    currentSettings.TextColor = "#FFFFFF";
+                    currentSettings.FavouriteIcon = "thriller_icon.png";
+                    break;
+                case "Drama":
+                    currentSettings.BackgroundColorFrame = "#8C8C8C";
+                    currentSettings.BackgroundColor = "#E6E6E6";
+                    currentSettings.TextColor = "#000000";
+                    currentSettings.FavouriteIcon = "drama_icon.png";
+                    break;
+                case "Default":
+                    currentSettings.BackgroundColorFrame = "#B8860B";
+                    currentSettings.BackgroundColor = "#F2E6C7";
+                    currentSettings.TextColor = "#000000";
+                    currentSettings.FavouriteIcon = "love_icon.png";
+                    break;
+            }
+        }
+    }
+
     private async void OnSaved_Clicked(object sender, EventArgs e)
     {
         try
@@ -33,7 +76,7 @@ public partial class SettingsPage : ContentPage
             SettingsManager.SaveSettings(currentSettings);
 
             await DisplayAlert("Success", "Settings saved!", "OK");
-            await Navigation.PopAsync();
+            await Shell.Current.GoToAsync("//MoviesMainPage");
         }
         catch (Exception ex)
         {

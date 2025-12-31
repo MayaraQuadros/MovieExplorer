@@ -11,6 +11,7 @@
             Routing.RegisterRoute(nameof(FavouritePage), typeof(FavouritePage));
             Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
             Routing.RegisterRoute(nameof(SettingsPage), typeof(SettingsPage));
+            
         }
 
         protected override async void OnAppearing()

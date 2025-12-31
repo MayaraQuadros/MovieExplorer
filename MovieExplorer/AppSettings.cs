@@ -9,5 +9,13 @@ namespace MovieExplorer
     public class AppSettings
     {
         public double TextSize { get; set; } = 12;
+        public string BackgroundColor { get; set; } = "#FFFFFF";
+
+        public string BackgroundColorFrame { get; set; } = "#B8860B";
+
+        public string TextColor { get; set; } = "#000000";
+
+        public string FavouriteIcon { get; set; } = "love.png";
+
     }   
 }

@@ -6,13 +6,17 @@
     
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
-            <!--Light mode color-->
-            <Color x:Key="DarkBackgroundColor">#181818</Color>
-            <!--Dark mode color-->
 
-            <Color x:Key="PageBackgroundColor">#FAFAFA</Color>
-            
+            <!-- Default text color -->
+            <Color x:Key="TextColor">#000000</Color>
+            <!-- Default frame background -->
+            <Color x:Key="ThemeBGColorFrame">#B8860B</Color>
+           
+            <!-- Default background Color -->
+            <Color x:Key="PageBackgroundColor">#F2E6C7</Color>
+
+            <!-- Default favourite Icon -->
+            <x:String x:Key="FavouriteIcon">love.png</x:String>
            
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -23,16 +27,14 @@
                 <SearchBar x:Name="searchBarEntry" Placeholder="Search movies by Title, Genre, Year, Director or IMDB rating"
                             TextChanged="searchBarEntry_TextChanged"  HorizontalOptions="Start" 
                            WidthRequest="500" TextColor="Black" BackgroundColor="WhiteSmoke"/>
-                <Button x:Name="ToggleThemeButton" Text="Toggle Theme" 
-                        Clicked="ToggleThemeButton_Clicked" FontAttributes="Bold" 
-                        WidthRequest="150"/>
+                
                 <Button x:Name="favouriteListBtn" Text="Favourites" 
                         Clicked="favouriteListBtn_Clicked"
                         FontAttributes="Bold" 
                         WidthRequest="150"/>
             </HorizontalStackLayout>
             <Label x:Name="lblDebugger" Text="{Binding Message}" TextColor="Black"/>
-            <Label x:Name="lblUsername" HorizontalOptions="Center" TextColor="Black"
+            <Label x:Name="lblUsername" HorizontalOptions="Center" TextColor="{DynamicResource TextColor}"
                    FontAttributes="Bold" FontSize="25" Margin="0,30,0,30"/>
             <Label x:Name="lblMoviesList" Text="Movies" IsVisible="False"
                    HorizontalOptions="Center"
@@ -53,7 +55,7 @@
                                 Padding="10"
                                 StrokeShape="RoundRectangle 12"
                                 StrokeThickness="1"
-                                BackgroundColor="DarkGoldenrod"
+                                BackgroundColor="{DynamicResource ThemeBGColorFrame}"
                                 >
                             <Border.Shadow>
                                 <Shadow Brush="Black"
@@ -65,16 +67,16 @@
 
                             <Grid RowDefinitions="*,Auto">
                                 <VerticalStackLayout Grid.Row="0" Spacing="4">
-                                    <Label Text="{Binding Title}" FontSize="35" TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold"/>
-                                    <Label Text="{Binding Year}" TextColor="Black"  HorizontalOptions="Center" FontSize="20"/>
-                                    <Label Text="{Binding Genre}" TextColor="Black"  HorizontalOptions="Center" FontSize="20"/>
-                                    <Label Text="{Binding Director}" TextColor="Black"  HorizontalOptions="Center" FontSize="20"/>
-                                    <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" TextColor="Black"  HorizontalOptions="Center" FontSize="20"/>
+                                    <Label Text="{Binding Title}" FontSize="35" TextColor="{DynamicResource TextColor}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Year}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="20"/>
+                                    <Label Text="{Binding Genre}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="20"/>
+                                    <Label Text="{Binding Director}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="20"/>
+                                    <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="20"/>
                                     
                                 </VerticalStackLayout>
 
 
-                                <ImageButton Source="love.png"
+                                <ImageButton Source="{DynamicResource FavouriteIcon}"
                                                 Clicked="favouriteMovieBtn_Clicked"
                                                 Grid.Row="1"
                                                 WidthRequest="15"
