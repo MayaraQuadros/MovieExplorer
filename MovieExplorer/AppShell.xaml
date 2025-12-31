@@ -9,7 +9,7 @@
 
    
     <ShellContent
-        Title="Home Movies"
+        Title="Movies"
        
         Route="MoviesMainPage" 
         x:Name="HomeMovies">
@@ -21,10 +21,17 @@
     </ShellContent>
     <FlyoutItem Title="Settings">
         <ShellContent
-     Title="Settings"
-     ContentTemplate="{DataTemplate local:SettingsPage}"
-     Route="SettingsPage" />
+             Title="Settings"
+             ContentTemplate="{DataTemplate local:SettingsPage}"
+             Route="SettingsPage" />
     </FlyoutItem>
+    <FlyoutItem Title="Favourites">
+        <ShellContent
+  Title="Favourites"
+  ContentTemplate="{DataTemplate local:FavouritePage}"
+  Route="FavouritePage" />
+    </FlyoutItem>
+   
 
 
 </Shell>

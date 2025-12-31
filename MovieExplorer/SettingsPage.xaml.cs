@@ -82,5 +82,7 @@ public partial class SettingsPage : ContentPage
         {
             await DisplayAlert("Error", $"Failed to save settings: {ex.Message}", "OK");
         }
-    }
+    }//end onSaveClicked
+
+    
 }

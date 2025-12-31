@@ -5,6 +5,17 @@
              x:Class="MovieExplorer.App">
     <Application.Resources>
         <ResourceDictionary>
+            <!-- Default text color -->
+            <Color x:Key="TextColor">#000000</Color>
+            <!-- Default frame background -->
+            <Color x:Key="ThemeBGColorFrame">#B8860B</Color>
+
+            <!-- Default background Color -->
+            <Color x:Key="PageBackgroundColor">#F2E6C7</Color>
+
+            <!-- Default favourite Icon -->
+            <x:String x:Key="FavouriteIcon">love.png</x:String>
+            
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />

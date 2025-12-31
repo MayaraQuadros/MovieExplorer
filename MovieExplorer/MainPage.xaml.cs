@@ -46,7 +46,7 @@ namespace MovieExplorer
             
         }
 
-        private void applyTheme()
+        public void applyTheme()
         {
             // TODO: Load settings using SettingsManager.LoadSettings()
             var settings = SettingsManager.LoadSettings();
@@ -55,21 +55,21 @@ namespace MovieExplorer
             // Hint: Application.Current.Resources["BackgroundColor"] = Color.FromArgb(...)
             if (!string.IsNullOrEmpty(settings.BackgroundColorFrame))
             {
-                Resources["ThemeBGColorFrame"] = 
+                Application.Current.Resources["ThemeBGColorFrame"] = 
                 Color.FromArgb(settings.BackgroundColorFrame);
             }
             if (!string.IsNullOrEmpty(settings.TextColor))
             {
-                Resources["TextColor"] =
+                Application.Current.Resources["TextColor"] =
                 Color.FromArgb(settings.TextColor);
             }
             if (!string.IsNullOrEmpty(settings.FavouriteIcon))
             {
-                Resources["FavouriteIcon"] = settings.FavouriteIcon;
+                Application.Current.Resources["FavouriteIcon"] = settings.FavouriteIcon;
             }
             if (!string.IsNullOrEmpty(settings.BackgroundColor))
             {
-                Resources["PageBackgroundColor"] =
+                Application.Current.Resources["PageBackgroundColor"] =
                 Color.FromArgb(settings.BackgroundColor);
             }
 
