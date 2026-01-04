@@ -3,83 +3,95 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MovieExplorer.MainPage"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
-    
-    
-    
-    <ScrollView>
-        <VerticalStackLayout>
-            <Grid ColumnDefinitions="*, auto" Padding="5">
 
-                <SearchBar x:Name="searchBarEntry" Placeholder="Search movies by Title, Genre, Year, Director or IMDB rating"
-                            TextChanged="searchBarEntry_TextChanged"  HorizontalOptions="Start" 
-                           WidthRequest="500" TextColor="Black"
-                           Grid.Column="0" BackgroundColor="WhiteSmoke"/>
+    <Grid RowDefinitions="Auto,*"   Padding="10" RowSpacing="10">
+        <VerticalStackLayout Grid.Row="0" Spacing="10">
+            <Grid ColumnDefinitions="*, auto" ColumnSpacing="10">
+
+                <SearchBar x:Name="searchBarEntry" 
+                    TextChanged="searchBarEntry_TextChanged"  HorizontalOptions="Start" 
+                    WidthRequest="{OnPlatform Android=250,WinUI=500}" 
+                    TextColor="Black"
+                    Grid.Column="0" BackgroundColor="WhiteSmoke">
+                    <SearchBar.Placeholder>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="Android" Value="Search movies" />
+                            <On Platform="WinUI" Value="Search movies by Title, Genre, Year, Director or IMDB rating" />
+                        </OnPlatform>
+                    </SearchBar.Placeholder>
+                </SearchBar>
 
                 <ImageButton x:Name="favouriteListBtn" Source="heart.png" 
-                        Clicked="favouriteListBtn_Clicked" BackgroundColor="Transparent"
-                        HeightRequest="40"
-                        WidthRequest="40"
-                        Grid.Column="1"
-                        Margin="0,0,10,10"/>
+                Clicked="favouriteListBtn_Clicked" BackgroundColor="Transparent"
+                HeightRequest="40"
+                WidthRequest="40"
+                Grid.Column="1"
+                Margin="0,0,10,10"/>
             </Grid>
             <Label x:Name="lblDebugger" Text="{Binding Message}" TextColor="Black"/>
             <Label x:Name="lblUsername" HorizontalOptions="Center" TextColor="{DynamicResource TextColor}"
-                   FontAttributes="Bold" FontSize="25" Margin="0,30,0,30"/>
+                    FontAttributes="Bold" FontSize="25" Margin="0,30,0,30"/>
             <Label x:Name="lblMoviesList" Text="Movies" IsVisible="False"
-                   HorizontalOptions="Center"
-                   Margin="0,40,0,40" FontSize="40" TextColor="Black"
-                   FontAttributes="Bold"/>
-
-            <CollectionView ItemsSource="{Binding FilteredMovies}"
-                        SelectionMode="Single" 
-                        SelectedItem="{Binding selectedMovie}"
-                        SelectionChanged="CollectionView_SelectionChanged">
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical"
-                                        Span="2" HorizontalItemSpacing="20" VerticalItemSpacing="10"/>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Border Margin="8"
-                                Padding="10"
-                                StrokeShape="RoundRectangle 12"
-                                StrokeThickness="1"
-                                BackgroundColor="{DynamicResource ThemeBGColorFrame}"
-                                >
-                            <Border.Shadow>
-                                <Shadow Brush="Black"
-                                        Offset="0,6"
-                                        Radius="12"
-                                        Opacity="0.5" />       
-                            </Border.Shadow>
-
-
-                            <Grid RowDefinitions="*,Auto">
-                                <VerticalStackLayout Grid.Row="0" Spacing="4">
-                                    <Label Text="{Binding Title}" FontSize="35" TextColor="{DynamicResource TextColor}" HorizontalOptions="Center" FontAttributes="Bold"/>
-                                    <Label Text="{Binding Year}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="20"/>
-                                    <Label Text="{Binding Genre}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="20"/>
-                                    <Label Text="{Binding Director}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="20"/>
-                                    <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="20"/>
-                                    
-                                </VerticalStackLayout>
-
-
-                                <ImageButton Source="{DynamicResource FavouriteIcon}"
-                                                Clicked="favouriteMovieBtn_Clicked"
-                                                Grid.Row="1"
-                                                WidthRequest="15"
-                                                HeightRequest="15"
-                                                BackgroundColor="Transparent"
-                                                HorizontalOptions="Start"/>
-
-                            </Grid>
-                        </Border>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-
+                    HorizontalOptions="Center"
+                     Margin="0,40,0,40" FontSize="40" TextColor="Black"
+                     FontAttributes="Bold"/>
         </VerticalStackLayout>
-    </ScrollView>
+        
+        <CollectionView Grid.Row="1"
+                                ItemsSource="{Binding FilteredMovies}"
+                                SelectionMode="Single" 
+                                SelectedItem="{Binding selectedMovie}"
+                                SelectionChanged="CollectionView_SelectionChanged">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                    HorizontalItemSpacing="20" VerticalItemSpacing="10">
+                    <GridItemsLayout.Span>
+                        <OnPlatform x:TypeArguments="x:Int32">
+                            <On Platform="Android" Value="2" />
+                            <On Platform="WinUI" Value="3" />
+                        </OnPlatform>
+                    </GridItemsLayout.Span>
+                </GridItemsLayout>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="8"
+                        Padding="10"
+                        StrokeShape="RoundRectangle 12"
+                        StrokeThickness="1"
+                        BackgroundColor="{DynamicResource ThemeBGColorFrame}"
+                        >
+                    <Border.Shadow>
+                        <Shadow Brush="Black"
+                                Offset="0,6"
+                                Radius="12"
+                                Opacity="0.5" />
+                    </Border.Shadow>
 
+
+                    <Grid RowDefinitions="*,Auto">
+                        <VerticalStackLayout Grid.Row="0" Spacing="4">
+                            <Label Text="{Binding Title}" FontSize="20" TextColor="{DynamicResource TextColor}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label Text="{Binding Year}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="13"/>
+                                <Label Text="{Binding Genre}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="13"/>
+                                <Label Text="{Binding Director}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="13"/>
+                                <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="13"/>
+
+                        </VerticalStackLayout>
+
+
+                        <ImageButton Source="{DynamicResource FavouriteIcon}"
+                                        Clicked="favouriteMovieBtn_Clicked"
+                                        Grid.Row="1"
+                                        WidthRequest="15"
+                                        HeightRequest="15"
+                                        BackgroundColor="Transparent"
+                                        HorizontalOptions="Start"/>
+
+                    </Grid>
+                 </Border>
+             </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

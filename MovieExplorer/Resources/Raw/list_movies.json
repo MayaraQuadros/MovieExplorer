@@ -1,166 +1,12 @@
 [
   {
-    "Title": "The Good, the Bad and the Ugly",
-    "Year": 1966,
-    "Genre": "Western",
-    "Director": "Sergio Leone",
-    "Imdb": 8.8,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg"
-  },
-  {
-    "Title": "Once Upon a Time in the West",
-    "Year": 1968,
-    "Genre": "Western",
-    "Director": "Sergio Leone",
-    "Imdb": 8.5,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/a/a2/Once_Upon_a_Time_in_the_West.jpg"
-  },
-  {
-    "Title": "Unforgiven",
-    "Year": 1992,
-    "Genre": "Western",
-    "Director": "Clint Eastwood",
-    "Imdb": 8.2,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/4/4e/Unforgiven_1992_poster.jpg"
-  },
-  {
-    "Title": "Django Unchained",
-    "Year": 2012,
-    "Genre": "Western",
-    "Director": "Quentin Tarantino",
-    "Imdb": 8.5,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/8b/Django_Unchained_Poster.jpg"
-  },
-  {
-    "Title": "True Grit",
-    "Year": 2010,
-    "Genre": "Western",
-    "Director": "Joel Coen, Ethan Coen",
-    "Imdb": 7.6,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/9/9b/True_Grit_Poster.jpg"
-  },
-  {
-    "Title": "The Searchers",
-    "Year": 1956,
-    "Genre": "Western",
-    "Director": "John Ford",
-    "Imdb": 8.0,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/9/9f/SearchersPoster-BillGold.jpg"
-  },
-  {
-    "Title": "High Noon",
-    "Year": 1952,
-    "Genre": "Western",
-    "Director": "Fred Zinnemann",
-    "Imdb": 8.0,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/5/54/High_Noon_%281952%29_poster.jpg"
-  },
-  {
-    "Title": "Butch Cassidy and the Sundance Kid",
-    "Year": 1969,
-    "Genre": "Western",
-    "Director": "George Roy Hill",
-    "Imdb": 8.0,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/2/25/Butch-cassidy-sundance-kid-poster.jpg"
-  },
-  {
-    "Title": "Tombstone",
-    "Year": 1993,
-    "Genre": "Western",
-    "Director": "George P. Cosmatos",
-    "Imdb": 7.8,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/1/11/Tombstoneposter.jpeg"
-  },
-  {
-    "Title": "The Magnificent Seven",
-    "Year": 1960,
-    "Genre": "Western",
-    "Director": "John Sturges",
-    "Imdb": 7.7,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/2/25/The_Magnificent_Seven_poster.jpg"
-  },
-
-  {
     "Title": "Titanic",
     "Year": 1997,
     "Genre": "Romance",
     "Director": "James Cameron",
     "Imdb": 7.9,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/2/22/Titanic_poster.jpg"
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/1/18/Titanic_%281997_film%29_poster.png"
   },
-  {
-    "Title": "The Notebook",
-    "Year": 2004,
-    "Genre": "Romance",
-    "Director": "Nick Cassavetes",
-    "Imdb": 7.8,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/86/Posternotebook.jpg"
-  },
-  {
-    "Title": "Pride & Prejudice",
-    "Year": 2005,
-    "Genre": "Romance",
-    "Director": "Joe Wright",
-    "Imdb": 7.8,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/8f/Pride_%26_Prejudice_2005_film_poster.jpg"
-  },
-  {
-    "Title": "La La Land",
-    "Year": 2016,
-    "Genre": "Romance",
-    "Director": "Damien Chazelle",
-    "Imdb": 8.0,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/a/ab/La_La_Land_%28film%29.png"
-  },
-  {
-    "Title": "Casablanca",
-    "Year": 1942,
-    "Genre": "Romance",
-    "Director": "Michael Curtiz",
-    "Imdb": 8.5,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/3/3f/CasablancaPoster-Gold.jpg"
-  },
-  {
-    "Title": "Before Sunrise",
-    "Year": 1995,
-    "Genre": "Romance",
-    "Director": "Richard Linklater",
-    "Imdb": 8.1,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/d/da/Before_Sunrise_poster.jpg"
-  },
-  {
-    "Title": "A Star Is Born",
-    "Year": 2018,
-    "Genre": "Romance",
-    "Director": "Bradley Cooper",
-    "Imdb": 7.6,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/3/39/A_Star_is_Born_%282018%29.png"
-  },
-  {
-    "Title": "Crazy Rich Asians",
-    "Year": 2018,
-    "Genre": "Romance",
-    "Director": "Jon M. Chu",
-    "Imdb": 6.9,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/6/64/Crazy_Rich_Asians_poster.png"
-  },
-  {
-    "Title": "Notting Hill",
-    "Year": 1999,
-    "Genre": "Romance",
-    "Director": "Roger Michell",
-    "Imdb": 7.2,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/3/38/NottingHillRobertsGrant.jpg"
-  },
-  {
-    "Title": "When Harry Met Sally...",
-    "Year": 1989,
-    "Genre": "Romance",
-    "Director": "Rob Reiner",
-    "Imdb": 7.7,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/1/1f/WhenHarryMetSallyPoster.jpg"
-  },
-
   {
     "Title": "Se7en",
     "Year": 1995,
@@ -170,93 +16,12 @@
     "Cover": "https://upload.wikimedia.org/wikipedia/en/6/68/Seven_%28movie%29_poster.jpg"
   },
   {
-    "Title": "The Silence of the Lambs",
-    "Year": 1991,
-    "Genre": "Thriller",
-    "Director": "Jonathan Demme",
-    "Imdb": 8.6,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/86/The_Silence_of_the_Lambs_poster.jpg"
-  },
-  {
-    "Title": "Gone Girl",
-    "Year": 2014,
-    "Genre": "Thriller",
-    "Director": "David Fincher",
-    "Imdb": 8.1,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/0/05/Gone_Girl_Poster.jpg"
-  },
-  {
-    "Title": "Shutter Island",
-    "Year": 2010,
-    "Genre": "Thriller",
-    "Director": "Martin Scorsese",
-    "Imdb": 8.2,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/7/76/Shutterislandposter.jpg"
-  },
-  {
-    "Title": "Black Swan",
-    "Year": 2010,
-    "Genre": "Thriller",
-    "Director": "Darren Aronofsky",
-    "Imdb": 8.0,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/6/68/Black_Swan_poster.jpg"
-  },
-  {
-    "Title": "The Girl with the Dragon Tattoo",
-    "Year": 2011,
-    "Genre": "Thriller",
-    "Director": "David Fincher",
-    "Imdb": 7.8,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/4/4f/The_Girl_with_the_Dragon_Tattoo_Poster.jpg"
-  },
-  {
-    "Title": "Zodiac",
-    "Year": 2007,
-    "Genre": "Thriller",
-    "Director": "David Fincher",
-    "Imdb": 7.7,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/7/7a/Zodiacmovieposter.jpg"
-  },
-  {
-    "Title": "Prisoners",
-    "Year": 2013,
-    "Genre": "Thriller",
-    "Director": "Denis Villeneuve",
-    "Imdb": 8.1,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/6/63/Prisoners2013Poster.jpg"
-  },
-  {
-    "Title": "No Country for Old Men",
-    "Year": 2007,
-    "Genre": "Thriller",
-    "Director": "Joel Coen, Ethan Coen",
-    "Imdb": 8.2,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/8b/No_Country_for_Old_Men_poster.jpg"
-  },
-  {
-    "Title": "Memento",
-    "Year": 2000,
-    "Genre": "Thriller",
-    "Director": "Christopher Nolan",
-    "Imdb": 8.4,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/c/c7/Memento_poster.jpg"
-  },
-
-  {
-    "Title": "Saving Private Ryan",
-    "Year": 1998,
-    "Genre": "Drama",
-    "Director": "Steven Spielberg",
-    "Imdb": 8.6,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/a/ac/Saving_Private_Ryan_poster.jpg"
-  },
-  {
-    "Title": "The Shawshank Redemption",
-    "Year": 1994,
-    "Genre": "Drama",
-    "Director": "Frank Darabont",
-    "Imdb": 9.3,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg"
+    "Title": "The Good, the Bad and the Ugly",
+    "Year": 1966,
+    "Genre": "Western",
+    "Director": "Sergio Leone",
+    "Imdb": 8.8,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg"
   },
   {
     "Title": "Forrest Gump",
@@ -267,12 +32,119 @@
     "Cover": "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg"
   },
   {
-    "Title": "The Green Mile",
-    "Year": 1999,
+    "Title": "Superbad",
+    "Year": 2007,
+    "Genre": "Comedy",
+    "Director": "Greg Mottola",
+    "Imdb": 7.6,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/8b/Superbad_Poster.png"
+  },
+
+  {
+    "Title": "Casablanca",
+    "Year": 1942,
+    "Genre": "Romance",
+    "Director": "Michael Curtiz",
+    "Imdb": 8.5,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/3/3f/CasablancaPoster-Gold.jpg"
+  },
+  {
+    "Title": "Shutter Island",
+    "Year": 2010,
+    "Genre": "Thriller",
+    "Director": "Martin Scorsese",
+    "Imdb": 8.2,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/7/76/Shutterislandposter.jpg"
+  },
+  {
+    "Title": "Unforgiven",
+    "Year": 1992,
+    "Genre": "Western",
+    "Director": "Clint Eastwood",
+    "Imdb": 8.2,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/4/4e/Unforgiven_2.jpg"
+  },
+  {
+    "Title": "The Shawshank Redemption",
+    "Year": 1994,
     "Genre": "Drama",
     "Director": "Frank Darabont",
+    "Imdb": 9.3,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg"
+  },
+  {
+    "Title": "The Hangover",
+    "Year": 2009,
+    "Genre": "Comedy",
+    "Director": "Todd Phillips",
+    "Imdb": 7.7,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/b/b9/Hangoverposter09.jpg"
+  },
+
+  {
+    "Title": "La La Land",
+    "Year": 2016,
+    "Genre": "Romance",
+    "Director": "Damien Chazelle",
+    "Imdb": 8.0,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/a/ab/La_La_Land_%28film%29.png"
+  },
+  {
+    "Title": "Gone Girl",
+    "Year": 2014,
+    "Genre": "Thriller",
+    "Director": "David Fincher",
+    "Imdb": 8.1,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/0/05/Gone_Girl_Poster.jpg"
+  },
+  {
+    "Title": "Django Unchained",
+    "Year": 2012,
+    "Genre": "Western",
+    "Director": "Quentin Tarantino",
+    "Imdb": 8.5,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/8b/Django_Unchained_Poster.jpg"
+  },
+  {
+    "Title": "Saving Private Ryan",
+    "Year": 1998,
+    "Genre": "Drama",
+    "Director": "Steven Spielberg",
     "Imdb": 8.6,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/e/e2/The_Green_Mile_%28movie_poster%29.jpg"
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/a/ac/Saving_Private_Ryan_poster.jpg"
+  },
+  {
+    "Title": "Groundhog Day",
+    "Year": 1993,
+    "Genre": "Comedy",
+    "Director": "Harold Ramis",
+    "Imdb": 8.1,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/b/b1/Groundhog_Day_%281993%29_poster.jpg"
+  },
+
+  {
+    "Title": "Before Sunrise",
+    "Year": 1995,
+    "Genre": "Romance",
+    "Director": "Richard Linklater",
+    "Imdb": 8.1,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/d/da/Before_Sunrise_poster.jpg"
+  },
+  {
+    "Title": "The Silence of the Lambs",
+    "Year": 1991,
+    "Genre": "Thriller",
+    "Director": "Jonathan Demme",
+    "Imdb": 8.6,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/86/The_Silence_of_the_Lambs_poster.jpg"
+  },
+  {
+    "Title": "True Grit",
+    "Year": 2010,
+    "Genre": "Western",
+    "Director": "Joel Coen, Ethan Coen",
+    "Imdb": 7.6,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/9/9b/True_Grit_Poster.jpg"
   },
   {
     "Title": "Fight Club",
@@ -283,12 +155,119 @@
     "Cover": "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg"
   },
   {
+    "Title": "Step Brothers",
+    "Year": 2008,
+    "Genre": "Comedy",
+    "Director": "Adam McKay",
+    "Imdb": 6.9,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/d/d9/StepbrothersMP08.jpg"
+  },
+
+  {
+    "Title": "Notting Hill",
+    "Year": 1999,
+    "Genre": "Romance",
+    "Director": "Roger Michell",
+    "Imdb": 7.2,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/3/38/NottingHillRobertsGrant.jpg"
+  },
+  {
+    "Title": "Memento",
+    "Year": 2000,
+    "Genre": "Thriller",
+    "Director": "Christopher Nolan",
+    "Imdb": 8.4,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/c/c7/Memento_poster.jpg"
+  },
+  {
+    "Title": "Tombstone",
+    "Year": 1993,
+    "Genre": "Western",
+    "Director": "George P. Cosmatos",
+    "Imdb": 7.8,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/1/11/Tombstoneposter.jpeg"
+  },
+  {
+    "Title": "The Green Mile",
+    "Year": 1999,
+    "Genre": "Drama",
+    "Director": "Frank Darabont",
+    "Imdb": 8.6,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/e/e2/The_Green_Mile_%28movie_poster%29.jpg"
+  },
+  {
+    "Title": "Bridesmaids",
+    "Year": 2011,
+    "Genre": "Comedy",
+    "Director": "Paul Feig",
+    "Imdb": 6.8,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/d/df/BridesmaidsPoster.jpg"
+  },
+
+  {
+    "Title": "When Harry Met Sally...",
+    "Year": 1989,
+    "Genre": "Romance",
+    "Director": "Rob Reiner",
+    "Imdb": 7.7,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/1/1f/WhenHarryMetSallyPoster.jpg"
+  },
+  {
+    "Title": "Zodiac",
+    "Year": 2007,
+    "Genre": "Thriller",
+    "Director": "David Fincher",
+    "Imdb": 7.7,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/7/7a/Zodiacmovieposter.jpg"
+  },
+  {
+    "Title": "The Magnificent Seven",
+    "Year": 1960,
+    "Genre": "Western",
+    "Director": "John Sturges",
+    "Imdb": 7.7,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/2/25/The_Magnificent_Seven_poster.jpg"
+  },
+  {
     "Title": "Good Will Hunting",
     "Year": 1997,
     "Genre": "Drama",
     "Director": "Gus Van Sant",
     "Imdb": 8.3,
     "Cover": "https://upload.wikimedia.org/wikipedia/en/b/b8/Good_Will_Hunting_theatrical_poster.jpg"
+  },
+  {
+    "Title": "Anchorman: The Legend of Ron Burgundy",
+    "Year": 2004,
+    "Genre": "Comedy",
+    "Director": "Adam McKay",
+    "Imdb": 7.1,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/9/9b/Anchorman_poster.jpg"
+  },
+
+  {
+    "Title": "Crazy Rich Asians",
+    "Year": 2018,
+    "Genre": "Romance",
+    "Director": "Jon M. Chu",
+    "Imdb": 6.9,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/6/64/Crazy_Rich_Asians_poster.png"
+  },
+  {
+    "Title": "Prisoners",
+    "Year": 2013,
+    "Genre": "Thriller",
+    "Director": "Denis Villeneuve",
+    "Imdb": 8.1,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/6/63/Prisoners2013Poster.jpg"
+  },
+  {
+    "Title": "High Noon",
+    "Year": 1952,
+    "Genre": "Western",
+    "Director": "Fred Zinnemann",
+    "Imdb": 8.0,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/5/54/High_Noon_%281952%29_poster.jpg"
   },
   {
     "Title": "A Beautiful Mind",
@@ -299,12 +278,78 @@
     "Cover": "https://upload.wikimedia.org/wikipedia/en/b/b8/A_Beautiful_Mind_Poster.jpg"
   },
   {
+    "Title": "Mean Girls",
+    "Year": 2004,
+    "Genre": "Comedy",
+    "Director": "Mark Waters",
+    "Imdb": 7.1,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/a/ac/Mean_Girls_film_poster.png"
+  },
+
+  {
+    "Title": "A Star Is Born",
+    "Year": 2018,
+    "Genre": "Romance",
+    "Director": "Bradley Cooper",
+    "Imdb": 7.6,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/3/39/A_Star_is_Born_%282018%29.png"
+  },
+  {
+    "Title": "Black Swan",
+    "Year": 2010,
+    "Genre": "Thriller",
+    "Director": "Darren Aronofsky",
+    "Imdb": 8.0,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/6/68/Black_Swan_poster.jpg"
+  },
+  {
+    "Title": "Butch Cassidy and the Sundance Kid",
+    "Year": 1969,
+    "Genre": "Western",
+    "Director": "George Roy Hill",
+    "Imdb": 8.0,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/2/25/Butch-cassidy-sundance-kid-poster.jpg"
+  },
+  {
     "Title": "The Pursuit of Happyness",
     "Year": 2006,
     "Genre": "Drama",
     "Director": "Gabriele Muccino",
     "Imdb": 8.0,
     "Cover": "https://upload.wikimedia.org/wikipedia/en/8/81/Poster-pursuithappyness.jpg"
+  },
+  {
+    "Title": "Home Alone",
+    "Year": 1990,
+    "Genre": "Comedy",
+    "Director": "Chris Columbus",
+    "Imdb": 7.7,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/7/76/Home_alone_poster.jpg"
+  },
+
+  {
+    "Title": "Pride & Prejudice",
+    "Year": 2005,
+    "Genre": "Romance",
+    "Director": "Joe Wright",
+    "Imdb": 7.8,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/8f/Pride_%26_Prejudice_2005_film_poster.jpg"
+  },
+  {
+    "Title": "No Country for Old Men",
+    "Year": 2007,
+    "Genre": "Thriller",
+    "Director": "Joel Coen, Ethan Coen",
+    "Imdb": 8.2,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/8b/No_Country_for_Old_Men_poster.jpg"
+  },
+  {
+    "Title": "The Searchers",
+    "Year": 1956,
+    "Genre": "Western",
+    "Director": "John Ford",
+    "Imdb": 8.0,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/9/9f/SearchersPoster-BillGold.jpg"
   },
   {
     "Title": "12 Years a Slave",
@@ -315,53 +360,45 @@
     "Cover": "https://upload.wikimedia.org/wikipedia/en/5/5c/12_Years_a_Slave_film_poster.jpg"
   },
   {
+    "Title": "Mrs. Doubtfire",
+    "Year": 1993,
+    "Genre": "Comedy",
+    "Director": "Chris Columbus",
+    "Imdb": 7.1,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/5/5c/Mrs_Doubtfire_poster.jpg"
+  },
+
+  {
+    "Title": "The Notebook",
+    "Year": 2004,
+    "Genre": "Romance",
+    "Director": "Nick Cassavetes",
+    "Imdb": 7.8,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/86/Posternotebook.jpg"
+  },
+  {
+    "Title": "The Girl with the Dragon Tattoo",
+    "Year": 2011,
+    "Genre": "Thriller",
+    "Director": "David Fincher",
+    "Imdb": 7.8,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/4/4f/The_Girl_with_the_Dragon_Tattoo_Poster.jpg"
+  },
+  {
+    "Title": "Once Upon a Time in the West",
+    "Year": 1968,
+    "Genre": "Western",
+    "Director": "Sergio Leone",
+    "Imdb": 8.5,
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/a/a2/Once_Upon_a_Time_in_the_West.jpg"
+  },
+  {
     "Title": "Moonlight",
     "Year": 2016,
     "Genre": "Drama",
     "Director": "Barry Jenkins",
     "Imdb": 7.4,
     "Cover": "https://upload.wikimedia.org/wikipedia/en/8/84/Moonlight_%282016_film%29.png"
-  },
-
-  {
-    "Title": "Superbad",
-    "Year": 2007,
-    "Genre": "Comedy",
-    "Director": "Greg Mottola",
-    "Imdb": 7.6,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/8/8b/Superbad_Poster.png"
-  },
-  {
-    "Title": "The Hangover",
-    "Year": 2009,
-    "Genre": "Comedy",
-    "Director": "Todd Phillips",
-    "Imdb": 7.7,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/b/b9/Hangoverposter09.jpg"
-  },
-  {
-    "Title": "Groundhog Day",
-    "Year": 1993,
-    "Genre": "Comedy",
-    "Director": "Harold Ramis",
-    "Imdb": 8.1,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/b/b1/Groundhog_Day_%281993%29_poster.jpg"
-  },
-  {
-    "Title": "Step Brothers",
-    "Year": 2008,
-    "Genre": "Comedy",
-    "Director": "Adam McKay",
-    "Imdb": 6.9,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/d/d9/StepbrothersMP08.jpg"
-  },
-  {
-    "Title": "Bridesmaids",
-    "Year": 2011,
-    "Genre": "Comedy",
-    "Director": "Paul Feig",
-    "Imdb": 6.8,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/d/df/BridesmaidsPoster.jpg"
   },
   {
     "Title": "Borat",
@@ -370,37 +407,5 @@
     "Director": "Larry Charles",
     "Imdb": 7.3,
     "Cover": "https://upload.wikimedia.org/wikipedia/en/3/39/Boratposter.jpg"
-  },
-  {
-    "Title": "Anchorman: The Legend of Ron Burgundy",
-    "Year": 2004,
-    "Genre": "Comedy",
-    "Director": "Adam McKay",
-    "Imdb": 7.1,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/9/9b/Anchorman_poster.jpg"
-  },
-  {
-    "Title": "Mean Girls",
-    "Year": 2004,
-    "Genre": "Comedy",
-    "Director": "Mark Waters",
-    "Imdb": 7.1,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/a/ac/Mean_Girls_film_poster.png"
-  },
-  {
-    "Title": "Home Alone",
-    "Year": 1990,
-    "Genre": "Comedy",
-    "Director": "Chris Columbus",
-    "Imdb": 7.7,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/7/76/Home_alone_poster.jpg"
-  },
-  {
-    "Title": "Mrs. Doubtfire",
-    "Year": 1993,
-    "Genre": "Comedy",
-    "Director": "Chris Columbus",
-    "Imdb": 7.1,
-    "Cover": "https://upload.wikimedia.org/wikipedia/en/5/5c/Mrs_Doubtfire_poster.jpg"
   }
 ]

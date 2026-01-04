@@ -8,7 +8,7 @@
    
     <Grid Padding="20" ColumnSpacing="30" ColumnDefinitions="*,*" RowDefinitions="Auto,40,*">
        
-        <Label Text="{Binding Title}" FontSize="35" 
+        <Label Text="{Binding Title}" TextColor="{DynamicResource TextColor}" FontSize="35" 
                 HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"
                 Grid.ColumnSpan="2" Margin="0,0,0,20"/>
         
@@ -19,17 +19,17 @@
                VerticalOptions="Center"
                HorizontalOptions="Center"/>
             <Image x:Name="ImageDisplay" 
-               HeightRequest="300" 
-               WidthRequest="300" 
+               HeightRequest="{OnPlatform Android=200,WinUI=300}"
+               WidthRequest="{OnPlatform Android=200,WinUI=300}"
                Aspect="AspectFit" IsVisible="{Binding IsNotDownloading, Source={x:Reference MovieDetail}}"/>
         </VerticalStackLayout>
         <!-- Right side: Track Listing -->
         <VerticalStackLayout Grid.Column="1" Grid.Row="2" Padding="0,40" Spacing="10">
             
-            <Label Text="{Binding Year}" FontSize="Medium" HorizontalOptions="Start"/>
-            <Label Text="{Binding Genre}" FontSize="Medium" HorizontalOptions="Start"/>
-            <Label Text="{Binding Director}" FontSize="Medium" HorizontalOptions="Start"/>
-            <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" FontSize="Medium" HorizontalOptions="Start"/>
+            <Label Text="{Binding Year}" TextColor="{DynamicResource TextColor}" FontSize="Medium" HorizontalOptions="Start"/>
+            <Label Text="{Binding Genre}" TextColor="{DynamicResource TextColor}" FontSize="Medium" HorizontalOptions="Start"/>
+            <Label Text="{Binding Director}" TextColor="{DynamicResource TextColor}" FontSize="Medium" HorizontalOptions="Start"/>
+            <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" TextColor="{DynamicResource TextColor}" FontSize="Medium" HorizontalOptions="Start"/>
             <Button Text="Back" Clicked="BackButton_Clicked" WidthRequest="100"
                     HorizontalOptions="Start" Margin="0, 100" 
                     BackgroundColor="Black" TextColor="White"/>

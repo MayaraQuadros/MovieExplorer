@@ -6,12 +6,7 @@
              BackgroundColor="{DynamicResource PageBackgroundColor}">
     <ScrollView>
         <VerticalStackLayout>
-            <HorizontalStackLayout Spacing="40">
-                <SearchBar x:Name="searchBarEntryFavourite" Placeholder="Search movies by Title, Genre, Year, Director or IMDB rating"
-                           SearchButtonPressed="searchBarEntryFavourite_SearchButtonPressed" HorizontalOptions="Start" WidthRequest="500"
-                           BackgroundColor="WhiteSmoke"/>
-               
-            </HorizontalStackLayout>
+           
             <Label x:Name="lblDebugger" Text="{Binding Message}" TextColor="Black"/>
             <Label x:Name="lblMoviesList" Text=" Favourite Movies" HorizontalOptions="Center"
                Margin="0,40,0,40" FontSize="Large" TextColor="{DynamicResource TextColor}"/>
@@ -20,7 +15,7 @@
                        SelectionMode="Single" 
                        SelectedItem="{Binding selectedMovie}"
                        SelectionChanged="CollectionView_SelectionChanged">
-                    SelectionChanged="CollectionView_SelectionChanged">
+                    
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical"
                         Span="2" HorizontalItemSpacing="20" VerticalItemSpacing="10"/>
@@ -51,14 +46,7 @@
                                     </VerticalStackLayout>
 
 
-                                    <Button Text="Remove"
-                                                TextColor="White"
-                                                Grid.Row="1"
-                                                WidthRequest="150"
-                                                HeightRequest="50"
-                                                BackgroundColor="Black"
-                                                HorizontalOptions="Start"/>
-
+                                    
                                 </Grid>
                             </Border>
                         </DataTemplate>

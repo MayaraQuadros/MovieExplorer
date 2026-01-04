@@ -6,12 +6,14 @@ using System.Net.NetworkInformation;
 using System.Text.Json;
 using System.Threading.Tasks;
 
+
 namespace MovieExplorer
 {
     public partial class MainPage : ContentPage
     {
-      
+        
         private MoviesViewModel viewModel;
+        private MovieShared movieShared;
         private string _url;
 
 
@@ -22,7 +24,9 @@ namespace MovieExplorer
             InitializeComponent();
             _url = url;
             viewModel = new MoviesViewModel(url);
-            
+            movieShared = new MovieShared();
+
+
             BindingContext = viewModel;
             
 
@@ -77,17 +81,12 @@ namespace MovieExplorer
 
 
        
-
+        //show the movie page details when a movie is selected
         private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.CurrentSelection.FirstOrDefault() is Movie selectedMovie)
             {
-                var parameters = new Dictionary<string, object> // store the selected movie in a dictionary
-                {
-                    {"Movie", selectedMovie}
-                };
-
-                await Shell.Current.GoToAsync(nameof(MovieDetailPage), parameters); // send the dictionary to the MovieDetailPage
+               await movieShared.ShowMovieDetails(selectedMovie);
                 ((CollectionView)sender).SelectedItem = null; // deselect the item in the collection view
             }
 
@@ -145,10 +144,10 @@ namespace MovieExplorer
             await Shell.Current.GoToAsync(nameof(FavouritePage)); 
         }
 
-        private void searchBarEntry_TextChanged(object sender, TextChangedEventArgs e)
+        private async void searchBarEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string searchEntry = searchBarEntry.Text.ToLower(); //get search text from user
-            
+            string word = searchBarEntry.Text.ToLower(); //get search text from user
+
             viewModel.FilteredMovies.Clear();//clear the observableColletion
 
             // search the list for the entry word
@@ -158,7 +157,7 @@ namespace MovieExplorer
                 if (movie != null)
                 {
                     //if the title contains the word, add to FilteredMoves observableCollection
-                    if (movie.Title.ToLower().Contains(searchEntry) || movie.Genre.ToLower().Contains(searchEntry) || movie.Director.ToLower().Contains(searchEntry) || movie.Year.ToString().Contains(searchEntry) || movie.Imdb.ToString().Contains(searchEntry))
+                    if (movie.Title.ToLower().Contains(word) || movie.Genre.ToLower().Contains(word) || movie.Director.ToLower().Contains(word) || movie.Year.ToString().Contains(word) || movie.Imdb.ToString().Contains(word))
                     {
                         viewModel.FilteredMovies.Add(movie);
 
@@ -169,6 +168,7 @@ namespace MovieExplorer
                     viewModel.FilteredMovies = viewModel.Movies; //if the entry field is empty, show all movie again
                 }
             }
+
         }//end SearchBarEntry
 
         private async void OnSettings_Clicked(object sender, EventArgs e)

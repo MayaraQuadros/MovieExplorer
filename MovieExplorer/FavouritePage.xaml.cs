@@ -3,7 +3,8 @@ namespace MovieExplorer;
 public partial class FavouritePage : ContentPage
 {
     MoviesViewModel viewModel;
-	public FavouritePage()
+    private MovieShared movieShared = new MovieShared();
+    public FavouritePage()
 	{
 		InitializeComponent();
         viewModel = new MoviesViewModel();
@@ -42,9 +43,13 @@ public partial class FavouritePage : ContentPage
 
     }
 
-    private void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-
+        if (e.CurrentSelection.FirstOrDefault() is Movie selectedMovie)
+        {
+            await movieShared.ShowMovieDetails(selectedMovie);
+            ((CollectionView)sender).SelectedItem = null; // deselect the item in the collection view
+        }
     }
 
 }
