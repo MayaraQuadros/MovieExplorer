@@ -6,6 +6,7 @@ namespace MovieExplorer;
 public partial class MovieDetailPage : ContentPage
 {
     private bool _isDownloading = false;
+    MoviesViewModel viewModel;
 
     public bool IsDownloading
     {
@@ -26,6 +27,7 @@ public partial class MovieDetailPage : ContentPage
     public MovieDetailPage()
 	{
 		InitializeComponent();
+        viewModel = new MoviesViewModel();
 		
 	}
 
@@ -35,10 +37,13 @@ public partial class MovieDetailPage : ContentPage
 		await Shell.Current.GoToAsync("..");
     }
 
+   
+
     private bool _imgLoaded = false;
     protected override async void OnAppearing()
     {
         base.OnAppearing();
+        viewModel.openMusic(MovieProperty.Genre);
         if (!_imgLoaded)
         {
             await Task.Delay(50);

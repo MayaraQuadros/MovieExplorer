@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MovieExplorer.ProfilePage"
              Title="ProfilePage"
-             BackgroundColor="WhiteSmoke">
+             BackgroundColor="#F2E6C7">
 
 
     <Grid>

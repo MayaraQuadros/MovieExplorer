@@ -7,14 +7,18 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
+using Plugin.Maui.Audio;
 
 namespace MovieExplorer
 {
     internal class MoviesViewModel : INotifyPropertyChanged // implement Interface
     {
+
+        private IAudioPlayer? openedMusic;
         private string _url;
         private int _listMovieSize;
         private Movie _selectedMovie;
+        private bool _musicPlaying = false;
         
        
 
@@ -242,7 +246,50 @@ namespace MovieExplorer
             }
               
         }
-        
+
+        public bool MusicPlaying
+        {
+            get => _musicPlaying;
+            set
+            {
+                if (value != _musicPlaying)
+                {
+                    _musicPlaying = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(MusicNotPlaying));
+                }
+            }
+        }
+
+        public void openMusic(string genre)
+        {
+            if(genre.Equals("Western"))
+            {
+                // This creates a new object with the new file, if there was an old object it will be dereferenced
+                openedMusic = AudioManager.Current.CreatePlayer("western.mp3");
+                Start();
+            }
+        }
+
+        // When someone clicks the stop button or it gets to the end of the song, this event handler is called
+        private void OpenedMusic_PlaybackEnded(object? sender, EventArgs e)
+        {
+
+            MusicPlaying = false;
+        }
+        public void Start()
+        {
+            openedMusic?.Play();
+            MusicPlaying = true;
+        }
+
+        public void Stop()
+        {
+            openedMusic?.Stop();
+           
+        }
+        public bool MusicNotPlaying => !MusicPlaying;
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         protected virtual void OnPropertyChanged(string? propertyName = null)

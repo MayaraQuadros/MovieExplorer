@@ -49,30 +49,30 @@
         <!-- Text Size Slider -->
         <Label Text="Text Size" 
                    FontSize="18" 
-                   FontAttributes="Bold"/>
+                   FontAttributes="Bold"
+                   TextColor="{DynamicResource TextColor}"/>
         <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="10">
             <Label x:Name="SizeLabelMin" 
                    Text="A"
                    FontSize="18"
                    Grid.Column="0" 
                    VerticalOptions="Center"
-                   WidthRequest="15"/>  
+                   WidthRequest="15"
+                   TextColor="{DynamicResource TextColor}"/>  
             <Slider x:Name="SizeSlider" 
                         Minimum="0" 
-                        Maximum="40" 
-                        Value="18" 
-                        Grid.Column="1"/>
+                        Maximum="10" 
+                        Value="0" 
+                        Grid.Column="1"
+                        />
             <Label x:Name="SizeLabelMax" 
                        Text="A"
                        FontSize="50"
                        Grid.Column="2" 
                        VerticalOptions="Center"
-                       WidthRequest="35"/>
-            <Label x:Name="SizeLabel" 
-                    Text="18"
-                    Grid.Column="3" 
-                    VerticalOptions="Center"
-                    WidthRequest="20"/> 
+                       WidthRequest="35"
+                        TextColor="{DynamicResource TextColor}"/>
+           
         </Grid>
 
         <!-- Save Button -->

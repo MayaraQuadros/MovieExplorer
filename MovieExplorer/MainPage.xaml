@@ -71,11 +71,11 @@
 
                     <Grid RowDefinitions="*,Auto">
                         <VerticalStackLayout Grid.Row="0" Spacing="4">
-                            <Label Text="{Binding Title}" FontSize="20" TextColor="{DynamicResource TextColor}" HorizontalOptions="Center" FontAttributes="Bold"/>
-                            <Label Text="{Binding Year}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="13"/>
-                                <Label Text="{Binding Genre}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="13"/>
-                                <Label Text="{Binding Director}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="13"/>
-                                <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="13"/>
+                                <Label Text="{Binding Title}" FontSize="{DynamicResource TitleTextSize}" TextColor="{DynamicResource TextColor}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label Text="{Binding Year}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
+                                <Label Text="{Binding Genre}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
+                                <Label Text="{Binding Director}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
+                                <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
 
                         </VerticalStackLayout>
 

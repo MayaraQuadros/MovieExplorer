@@ -8,7 +8,8 @@ namespace MovieExplorer
 {
     public class AppSettings
     {
-        public double TextSize { get; set; } = 12;
+        public double TitleTextSize { get; set; } = 13;
+        public double TextSize { get; set; } = 10;
         public string BackgroundColor { get; set; } = "#FFFFFF";
 
         public string BackgroundColorFrame { get; set; } = "#B8860B";

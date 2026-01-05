@@ -56,7 +56,7 @@ namespace MovieExplorer
             var settings = SettingsManager.LoadSettings();
 
             // TODO: Apply background color using dynamic resources
-            // Hint: Application.Current.Resources["BackgroundColor"] = Color.FromArgb(...)
+           
             if (!string.IsNullOrEmpty(settings.BackgroundColorFrame))
             {
                 Application.Current.Resources["ThemeBGColorFrame"] = 
@@ -102,6 +102,7 @@ namespace MovieExplorer
             favouriteListBtn.Rotation = 0; //reset the rotation
 
             applyTheme();
+            TextSizeChange();
 
             //checks if there is viewModel object and if the file was already downloade
             if (viewModel != null && !viewModel.IsLoaded)
@@ -118,9 +119,12 @@ namespace MovieExplorer
             // Load settings using SettingsManager.LoadSettings()
             var settings = SettingsManager.LoadSettings();
 
-            
+
+            Application.Current.Resources["TextSize"] = (10 + settings.TextSize);
+            Application.Current.Resources["TitleTextSize"] = 14 + settings.TextSize;
 
         }
+            
 
         public async void favouriteMovieBtn_Clicked(object sender, EventArgs e)
         {

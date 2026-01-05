@@ -24,7 +24,7 @@ public partial class ProfilePage : ContentPage
         base.OnAppearing();
 
         
-        await Task.Delay(7000);
+        await Task.Delay(5000);
         lblName.Opacity = 1;
         entryUsername.Opacity = 1;
         borderEntry.Opacity = 1;

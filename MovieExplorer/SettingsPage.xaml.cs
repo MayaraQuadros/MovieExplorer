@@ -1,3 +1,6 @@
+using Microsoft.Maui.Controls.Shapes;
+using System.Reflection;
+
 namespace MovieExplorer;
 
 public partial class SettingsPage : ContentPage
@@ -14,16 +17,19 @@ public partial class SettingsPage : ContentPage
         // Initialize UI controls with current settings values
         SizeSlider.Value = currentSettings.TextSize;
 
-        // Set up slider value changed events to update labels
-        SizeSlider.ValueChanged += (s, e) =>
-            SizeLabel.Text = $"{(int)e.NewValue}";
+       
     }
 
     // Handles Theme button clicks. Updates the BackgroundColor setting.
-    private void OnThemeSelected(object sender, EventArgs e)
+    private async void OnThemeSelected(object sender, EventArgs e)
     {
+        
         if(sender is Button button)
         {
+
+            button.BorderColor = Colors.Black;
+            button.BorderWidth = 3;
+            
             string genre = button.Text;
             switch(genre)
             {
@@ -59,8 +65,12 @@ public partial class SettingsPage : ContentPage
                     currentSettings.FavouriteIcon = "love_icon.png";
                     break;
             }
+            await Task.Delay(1000);
+           button.BorderWidth = 0;
         }
     }
+        
+      
 
     private async void OnSaved_Clicked(object sender, EventArgs e)
     {
