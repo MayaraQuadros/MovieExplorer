@@ -28,7 +28,10 @@ namespace MovieExplorer
 
 
             BindingContext = viewModel;
+
+            applyTheme();
             
+
 
             //lblFile.Text = url; // debugger
 
@@ -88,7 +91,9 @@ namespace MovieExplorer
             {
                await movieShared.ShowMovieDetails(selectedMovie);
                 ((CollectionView)sender).SelectedItem = null; // deselect the item in the collection view
+                
             }
+            
 
         }//end CollectionView_SelectionChanged
 
@@ -120,8 +125,8 @@ namespace MovieExplorer
             var settings = SettingsManager.LoadSettings();
 
 
-            Application.Current.Resources["TextSize"] = (10 + settings.TextSize);
-            Application.Current.Resources["TitleTextSize"] = 14 + settings.TextSize;
+            Application.Current.Resources["TextSize"] = settings.TextSize;
+            Application.Current.Resources["TitleTextSize"] = settings.TextSize;
 
         }
             

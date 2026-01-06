@@ -14,6 +14,8 @@ public partial class ProfilePage : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
+       startBtn.Source = "clapper_gold.png";
+        await Task.Delay(500);
 		string username = entryUsername.Text; // store the name entered 
 		Preferences.Default.Set("username", username); // save the name in preferences
 		await Shell.Current.GoToAsync("//MoviesMainPage"); // makes the mainPage root

@@ -14,7 +14,7 @@
             <Color x:Key="PageBackgroundColor">#F2E6C7</Color>
 
             <!-- Default favourite Icon -->
-            <x:String x:Key="FavouriteIcon">love.png</x:String>
+            <x:String x:Key="FavouriteIcon">love_icon.png</x:String>
             
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />

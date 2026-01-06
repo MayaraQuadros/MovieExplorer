@@ -89,13 +89,7 @@ namespace MovieExplorer
 
         }
 
-        public void SortMovies(string sortBy)
-        {
-            switch(sortBy)
-            {
-
-            }
-        }
+      
 
    
 
@@ -261,14 +255,32 @@ namespace MovieExplorer
             }
         }
 
-        public void openMusic(string genre)
+        public async Task openMusic(string genre)
         {
-            if(genre.Equals("Western"))
+            var file = "";
+            switch(genre)
             {
-                // This creates a new object with the new file, if there was an old object it will be dereferenced
-                openedMusic = AudioManager.Current.CreatePlayer("western.mp3");
-                Start();
+                case "Romance":
+                    file = "love_music.mp3";
+                    break;
+                case "Western":
+                    file = "western_music.mp3";
+                    break;
+                case "Thriller":
+                    file = "thriller_music.mp3";
+                    break;
+                case "Drama":
+                    file = "drama_music.mp3";
+                    break;
+                case "Comedy":
+                    file = "comedy_music.mp3";
+                    break;
             }
+            var stream = await FileSystem.OpenAppPackageFileAsync(file);
+            // This creates a new object with the new file, if there was an old object it will be dereferenced
+            openedMusic = AudioManager.Current.CreatePlayer(stream);
+            Start(); // starts playing music
+            
         }
 
         // When someone clicks the stop button or it gets to the end of the song, this event handler is called
@@ -290,11 +302,14 @@ namespace MovieExplorer
         }
         public bool MusicNotPlaying => !MusicPlaying;
 
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         protected virtual void OnPropertyChanged(string? propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        
     }
 }

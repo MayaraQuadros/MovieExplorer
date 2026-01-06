@@ -18,33 +18,40 @@
                TextColor="{DynamicResource TextColor}"
                    FontSize="18" 
                    FontAttributes="Bold"/>
-        <HorizontalStackLayout Spacing="10">
-            <Button Text="Romance" 
-                        BackgroundColor="#b76f6a" 
-                        TextColor="White"
-                        Clicked="OnThemeSelected"
-                        x:Name="RomanceButton"/>
-            <Button Text="Western" 
-                        BackgroundColor="#D2B48C" 
-                        TextColor="White"
-                        Clicked="OnThemeSelected"
-                        x:Name="WesternButton"/>
-            <Button Text="Thriller" 
-                        BackgroundColor="#0B1C2D" 
-                        TextColor="White"
-                         Clicked="OnThemeSelected"
-                        x:Name="ThrillerButton"/>
-            <Button Text="Drama" 
-                        BackgroundColor="#8C8C8C" 
-                        TextColor="White"
-                        Clicked="OnThemeSelected"
-                        x:Name="DramaButton"/>
-            <Button Text="Default" 
+        <VerticalStackLayout Spacing="20">
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Romance" 
+                    BackgroundColor="#b76f6a" 
+                    TextColor="White"
+                    Clicked="OnThemeSelected"
+                    x:Name="RomanceButton"/>
+                <Button Text="Western" 
+                    BackgroundColor="#D2B48C" 
+                    TextColor="White"
+                    Clicked="OnThemeSelected"
+                    x:Name="WesternButton"/>
+                <Button Text="Thriller" 
+                    BackgroundColor="#0B1C2D" 
+                    TextColor="White"
+                     Clicked="OnThemeSelected"
+                    x:Name="ThrillerButton"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Drama" 
+                    BackgroundColor="#8C8C8C" 
+                    TextColor="White"
+                    Clicked="OnThemeSelected"
+                    x:Name="DramaButton"/>
+                <Button Text="Default" 
                     BackgroundColor="#B8860B" 
                     TextColor="White"
                     Clicked="OnThemeSelected"
                     x:Name="DefaultButton"/>
-        </HorizontalStackLayout>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        
+            
+        
 
         <!-- Text Size Slider -->
         <Label Text="Text Size" 
@@ -60,9 +67,9 @@
                    WidthRequest="15"
                    TextColor="{DynamicResource TextColor}"/>  
             <Slider x:Name="SizeSlider" 
-                        Minimum="0" 
-                        Maximum="10" 
-                        Value="0" 
+                        Minimum="14" 
+                        Maximum="22" 
+                        Value="14" 
                         Grid.Column="1"
                         />
             <Label x:Name="SizeLabelMax" 
@@ -72,7 +79,14 @@
                        VerticalOptions="Center"
                        WidthRequest="35"
                         TextColor="{DynamicResource TextColor}"/>
-           
+            <Label x:Name="SizeLabel" 
+                    Text="0"
+                    Grid.Column="3" 
+                    VerticalOptions="Center"
+                    WidthRequest="20"
+                   IsVisible="False"
+                   TextColor="{DynamicResource TextColor}"/>
+            
         </Grid>
 
         <!-- Save Button -->

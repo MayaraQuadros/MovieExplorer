@@ -83,8 +83,8 @@
                         <ImageButton Source="{DynamicResource FavouriteIcon}"
                                         Clicked="favouriteMovieBtn_Clicked"
                                         Grid.Row="1"
-                                        WidthRequest="15"
-                                        HeightRequest="15"
+                                        WidthRequest="{OnPlatform Android=8,WinUI=15}"
+                                        HeightRequest="{OnPlatform Android=8,WinUI=15}"
                                         BackgroundColor="Transparent"
                                         HorizontalOptions="Start"/>
 

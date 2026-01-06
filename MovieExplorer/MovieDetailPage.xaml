@@ -6,12 +6,20 @@
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
    
-    <Grid Padding="20" ColumnSpacing="30" ColumnDefinitions="*,*" RowDefinitions="Auto,40,*">
-       
+    <Grid Padding="20" ColumnSpacing="30" ColumnDefinitions="*,*,Auto" RowDefinitions="Auto,40,*">
+
+        <!-- Title and sound -->
         <Label Text="{Binding Title}" TextColor="{DynamicResource TextColor}" FontSize="35" 
-                HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"
-                Grid.ColumnSpan="2" Margin="0,0,0,20"/>
-        
+                VerticalOptions="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                 HorizontalOptions="Center" Margin="0,0,0,20"/>
+        <ImageButton x:Name="Sound" Source="volume.png"
+                     Grid.Column="3"
+                     Grid.Row="0"
+                     WidthRequest="10"
+                     HeightRequest="10"
+                     VerticalOptions="Center"
+                     Clicked="Sound_Clicked"/>
+
         <!-- Left side: Image and Info -->
         <VerticalStackLayout Grid.Column="0" Grid.Row="2"  Spacing="10" WidthRequest="250">
             <ActivityIndicator IsVisible="{Binding IsDownloading, Source={x:Reference AlbDetail}}" 
@@ -26,13 +34,14 @@
         <!-- Right side: Track Listing -->
         <VerticalStackLayout Grid.Column="1" Grid.Row="2" Padding="0,40" Spacing="10">
             
-            <Label Text="{Binding Year}" TextColor="{DynamicResource TextColor}" FontSize="Medium" HorizontalOptions="Start"/>
-            <Label Text="{Binding Genre}" TextColor="{DynamicResource TextColor}" FontSize="Medium" HorizontalOptions="Start"/>
-            <Label Text="{Binding Director}" TextColor="{DynamicResource TextColor}" FontSize="Medium" HorizontalOptions="Start"/>
-            <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" TextColor="{DynamicResource TextColor}" FontSize="Medium" HorizontalOptions="Start"/>
+            <Label Text="{Binding Year}" TextColor="{DynamicResource TextColor}" FontSize="{DynamicResource TextSize}" HorizontalOptions="Start"/>
+            <Label Text="{Binding Genre}" TextColor="{DynamicResource TextColor}" FontSize="{DynamicResource TextSize}" HorizontalOptions="Start"/>
+            <Label Text="{Binding Director}" TextColor="{DynamicResource TextColor}" FontSize="{DynamicResource TextSize}" HorizontalOptions="Start"/>
+            <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" TextColor="{DynamicResource TextColor}" FontSize="{DynamicResource TextSize}" HorizontalOptions="Start"/>
             <Button Text="Back" Clicked="BackButton_Clicked" WidthRequest="100"
                     HorizontalOptions="Start" Margin="0, 100" 
                     BackgroundColor="Black" TextColor="White"/>
+     
         </VerticalStackLayout>
     </Grid>
 

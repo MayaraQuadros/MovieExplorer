@@ -6,6 +6,7 @@ namespace MovieExplorer;
 public partial class MovieDetailPage : ContentPage
 {
     private bool _isDownloading = false;
+    private bool _soundOn = true;
     MoviesViewModel viewModel;
 
     public bool IsDownloading
@@ -34,7 +35,8 @@ public partial class MovieDetailPage : ContentPage
     public Movie MovieProperty { get; set; }
     private async void BackButton_Clicked(object sender, EventArgs e)
     {
-		await Shell.Current.GoToAsync("..");
+        viewModel.Stop(); // stop the music
+		await Shell.Current.GoToAsync(".."); // back to main
     }
 
    
@@ -43,7 +45,7 @@ public partial class MovieDetailPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        viewModel.openMusic(MovieProperty.Genre);
+        await viewModel.openMusic(MovieProperty.Genre);
         if (!_imgLoaded)
         {
             await Task.Delay(50);
@@ -64,5 +66,27 @@ public partial class MovieDetailPage : ContentPage
             _imgLoaded = true;
             IsDownloading = false;
         }
+    }
+
+    protected override void OnDisappearing()
+    {
+        base.OnDisappearing();
+        viewModel.Stop(); // stop the music when user uses the back top button
+    }
+
+    private void Sound_Clicked(object sender, EventArgs e)
+    {
+        if(_soundOn)
+        {
+            viewModel.Stop();
+            Sound.Source = "volume_mute.png";
+        }
+        else
+        {
+            viewModel.Start();
+            Sound.Source = "volume.png";
+        }
+        _soundOn = !_soundOn;
+
     }
 }

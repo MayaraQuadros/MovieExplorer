@@ -17,7 +17,11 @@ public partial class SettingsPage : ContentPage
         // Initialize UI controls with current settings values
         SizeSlider.Value = currentSettings.TextSize;
 
-       
+        // Set up slider value changed events to update labels
+        SizeSlider.ValueChanged += (s, e) =>
+        SizeLabel.Text = $"{(int)e.NewValue}";
+
+
     }
 
     // Handles Theme button clicks. Updates the BackgroundColor setting.
@@ -81,6 +85,8 @@ public partial class SettingsPage : ContentPage
            
             currentSettings.TextSize = SizeSlider.Value;
            
+
+
 
             // Save settings to file
             SettingsManager.SaveSettings(currentSettings);
