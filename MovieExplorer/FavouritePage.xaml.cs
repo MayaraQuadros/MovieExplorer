@@ -38,10 +38,7 @@ public partial class FavouritePage : ContentPage
         await viewModel.ReadFavourite();
     }
 
-    private void searchBarEntryFavourite_SearchButtonPressed(object sender, EventArgs e)
-    {
-
-    }
+  
 
     private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {

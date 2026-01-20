@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MovieExplorer.MainPage"
+             
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
     <Grid RowDefinitions="Auto,*"   Padding="10" RowSpacing="10">
@@ -55,41 +56,45 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Border Margin="8"
-                        Padding="10"
-                        StrokeShape="RoundRectangle 12"
-                        StrokeThickness="1"
-                        BackgroundColor="{DynamicResource ThemeBGColorFrame}"
-                        >
-                    <Border.Shadow>
-                        <Shadow Brush="Black"
-                                Offset="0,6"
-                                Radius="12"
-                                Opacity="0.5" />
-                    </Border.Shadow>
+                    <ContentView BackgroundColor="Transparent">
+                        <Border Margin="8"
+                           Padding="10"
+                           StrokeShape="RoundRectangle 12"
+                           StrokeThickness="1"
+                           Stroke="Transparent"
+                           BackgroundColor="{DynamicResource ThemeBGColorFrame}">       
+                              <Border.Shadow>
+                                  <Shadow Brush="Black"
+                                           Offset="0,6"
+                                           Radius="12"
+                                           Opacity="0.5"
+               />
+                              </Border.Shadow>
 
 
-                    <Grid RowDefinitions="*,Auto">
-                        <VerticalStackLayout Grid.Row="0" Spacing="4">
-                                <Label Text="{Binding Title}" FontSize="{DynamicResource TitleTextSize}" TextColor="{DynamicResource TextColor}" HorizontalOptions="Center" FontAttributes="Bold"/>
-                            <Label Text="{Binding Year}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
-                                <Label Text="{Binding Genre}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
-                                <Label Text="{Binding Director}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
-                                <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
+                            <Grid RowDefinitions="*,Auto">
+                                <VerticalStackLayout Grid.Row="0" Spacing="4">
+                                    <Label Text="{Binding Title}" FontSize="{DynamicResource TitleTextSize}" TextColor="{DynamicResource TextColor}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Year}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
+                                    <Label Text="{Binding Genre}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
+                                    <Label Text="{Binding Director}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
+                                    <Label Text="{Binding Imdb, StringFormat='⭐ {0}'}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
 
-                        </VerticalStackLayout>
+                                </VerticalStackLayout>
 
 
-                        <ImageButton Source="{DynamicResource FavouriteIcon}"
-                                        Clicked="favouriteMovieBtn_Clicked"
-                                        Grid.Row="1"
-                                        WidthRequest="{OnPlatform Android=8,WinUI=15}"
-                                        HeightRequest="{OnPlatform Android=8,WinUI=15}"
-                                        BackgroundColor="Transparent"
-                                        HorizontalOptions="Start"/>
+                                <ImageButton Source="{DynamicResource FavouriteIcon}"
+                                            Clicked="favouriteMovieBtn_Clicked"
+                                            Grid.Row="1"
+                                            WidthRequest="{OnPlatform Android=8,WinUI=15}"
+                                            HeightRequest="{OnPlatform Android=8,WinUI=15}"
+                                            BackgroundColor="Transparent"
+                                            HorizontalOptions="Start"/>
 
-                    </Grid>
-                 </Border>
+                            </Grid>
+                        </Border>
+                    </ContentView>
+                    
              </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

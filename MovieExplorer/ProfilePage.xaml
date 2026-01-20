@@ -13,7 +13,7 @@
                HeightRequest="{OnPlatform Android=800,WinUI=800}"/>
         <VerticalStackLayout>
             <Label 
-                Text="Welcome to MoviesHub!" FontAttributes="Bold"
+                Text="Welcome to Movies Hub!" FontAttributes="Bold"
                 FontSize="{OnPlatform Android=20,WinUI=40}"
                 VerticalOptions="Center" HorizontalOptions="Center"
                 Margin="0,20,0,40" TextColor="Black"
@@ -39,7 +39,9 @@
                     Source="clapper.png" WidthRequest="150"
                     Clicked="Button_Clicked"
                     Margin="0,50"
-                    IsEnabled="False"/>
+                    IsEnabled="False"
+                    BackgroundColor="Transparent"
+                    />
         </VerticalStackLayout>
     </Grid>
 </ContentPage>

@@ -108,6 +108,7 @@ namespace MovieExplorer
 
             applyTheme();
             TextSizeChange();
+            
 
             //checks if there is viewModel object and if the file was already downloade
             if (viewModel != null && !viewModel.IsLoaded)

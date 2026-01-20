@@ -22,10 +22,6 @@ namespace MovieExplorer
             
         }
 
-        public void SearchBar(string word)
-        {
-            
-            
-        }
+       
     }
 }
