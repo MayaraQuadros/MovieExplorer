@@ -1,5 +1,5 @@
-    Movie Explorer App
-    A cross-platarfom mobile application built using .NET MAUI that allows users to browse, search and manage their favourite movies.
+    ## Movie Explorer App
+        A cross-platarfom mobile application built using .NET MAUI that allows users to browse, search and manage their favourite movies.
 
     Some of the features:
     -Search movies by title, genre, director, year or rating
