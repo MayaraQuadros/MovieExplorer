@@ -5,7 +5,7 @@ A cross-platform mobile application built using .NET MAUI that allows users to b
 ### Some of the features:
 - Search movies by title, genre, director, year or rating
 - View detailed movie information with cover images
-- Add and manage favourite movies
+- Save favourite movies
 - Local caching for offline access
 - Customisable UI (theme colors, text size)
 - Genre-based background music in movie details
@@ -39,7 +39,6 @@ A cross-platform mobile application built using .NET MAUI that allows users to b
 - Search movies by director
     <img width="1918" height="1011" alt="image" src="https://github.com/user-attachments/assets/8ec726eb-f42c-49fd-8742-ecd36ec26729" />
 
-
 - View movie details
     <img width="1912" height="1015" alt="image" src="https://github.com/user-attachments/assets/2524744e-ed59-4466-961a-5b97481f8f73" />
 
@@ -52,7 +51,11 @@ A cross-platform mobile application built using .NET MAUI that allows users to b
 ---
 ### AI Acknowledgment
 ChatGpt 
-- used to improve the movies listing, displaying movies in 3 columns
-- Assist with debugging
-- Support learning by helping understand the code
+- Used to improve the movies listing, displaying movies in 3 columns
+- Helped with debugging:
+    - Saving json files
+    - Data binding issues
+    - Theme not applying correctly
+- Supported learning by helping understand the code
+- Reviewed README documentation
             
