@@ -28,8 +28,8 @@
                VerticalOptions="Center"
                HorizontalOptions="Center"/>
             <Image x:Name="ImageDisplay" 
-               HeightRequest="{OnPlatform Android=200,WinUI=300}"
-               WidthRequest="{OnPlatform Android=200,WinUI=300}"
+               HeightRequest="{OnPlatform Android=200,WinUI=300,MacCatalyst=300}"
+               WidthRequest="{OnPlatform Android=200,WinUI=300,MacCatalyst=300}"
                Aspect="AspectFit" IsVisible="{Binding IsNotDownloading, Source={x:Reference MovieDetail}}"/>
         </VerticalStackLayout>
         <!-- Right side: Track Listing -->

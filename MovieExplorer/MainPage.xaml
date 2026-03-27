@@ -11,13 +11,13 @@
 
                 <SearchBar x:Name="searchBarEntry" 
                     TextChanged="searchBarEntry_TextChanged"  HorizontalOptions="Start" 
-                    WidthRequest="{OnPlatform Android=250,WinUI=500}" 
+                    WidthRequest="{OnPlatform Android=250,WinUI=500,MacCatalyst=500}" 
                     TextColor="Black"
                     Grid.Column="0" BackgroundColor="WhiteSmoke">
                     <SearchBar.Placeholder>
                         <OnPlatform x:TypeArguments="x:String">
                             <On Platform="Android" Value="Search movies" />
-                            <On Platform="WinUI" Value="Search movies by Title, Genre, Year, Director or IMDB rating" />
+                            <On Platform="WinUI,MacCatalyst" Value="Search movies by Title, Genre, Year, Director or IMDB rating" />
                         </OnPlatform>
                     </SearchBar.Placeholder>
                 </SearchBar>
@@ -49,7 +49,7 @@
                     <GridItemsLayout.Span>
                         <OnPlatform x:TypeArguments="x:Int32">
                             <On Platform="Android" Value="2" />
-                            <On Platform="WinUI" Value="3" />
+                            <On Platform="WinUI,MacCatalyst" Value="3" />
                         </OnPlatform>
                     </GridItemsLayout.Span>
                 </GridItemsLayout>
@@ -67,13 +67,17 @@
                                   <Shadow Brush="Black"
                                            Offset="0,6"
                                            Radius="12"
-                                           Opacity="0.5"
-               />
+                                           Opacity="0.5"/>
                               </Border.Shadow>
 
 
-                            <Grid RowDefinitions="*,Auto">
-                                <VerticalStackLayout Grid.Row="0" Spacing="4">
+                            <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,*">
+                                <Image Grid.Row="0" Grid.Column="0" Source="https://upload.wikimedia.org/wikipedia/en/1/18/Titanic_%281997_film%29_poster.png"
+                                       HeightRequest="15" WidthRequest="15" Aspect="AspectFill"
+                                       HorizontalOptions="Start"
+                                       VerticalOptions="Start"/>
+                                 
+                                <VerticalStackLayout Grid.Row="0" Grid.Column="1" Spacing="4">
                                     <Label Text="{Binding Title}" FontSize="{DynamicResource TitleTextSize}" TextColor="{DynamicResource TextColor}" HorizontalOptions="Center" FontAttributes="Bold"/>
                                     <Label Text="{Binding Year}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
                                     <Label Text="{Binding Genre}" TextColor="{DynamicResource TextColor}"  HorizontalOptions="Center" FontSize="{DynamicResource TextSize}"/>
@@ -86,8 +90,9 @@
                                 <ImageButton Source="{DynamicResource FavouriteIcon}"
                                             Clicked="favouriteMovieBtn_Clicked"
                                             Grid.Row="1"
-                                            WidthRequest="{OnPlatform Android=8,WinUI=15}"
-                                            HeightRequest="{OnPlatform Android=8,WinUI=15}"
+                                             Grid.Column="0"
+                                            WidthRequest="{OnPlatform Android=8,WinUI=15,MacCatalyst=15}"
+                                            HeightRequest="{OnPlatform Android=8,WinUI=15,MacCatalyst=15}"
                                             BackgroundColor="Transparent"
                                             HorizontalOptions="Start"/>
 
@@ -95,7 +100,7 @@
                         </Border>
                     </ContentView>
                     
-             </DataTemplate>
+                </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
     </Grid>

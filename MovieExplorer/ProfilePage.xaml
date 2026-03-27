@@ -10,30 +10,30 @@
         <Image Source="film_strip.png"
            Aspect="Fill"
            VerticalOptions="Start"
-               HeightRequest="{OnPlatform Android=800,WinUI=800}"/>
+               HeightRequest="{OnPlatform Android=800,WinUI=800,MacCatalyst=800}"/>
         <VerticalStackLayout>
             <Label 
                 Text="Welcome to Movies Hub!" FontAttributes="Bold"
-                FontSize="{OnPlatform Android=20,WinUI=40}"
+                FontSize="{OnPlatform Android=20,WinUI=40,MacCatalyst=40}"
                 VerticalOptions="Center" HorizontalOptions="Center"
                 Margin="0,20,0,40" TextColor="Black"
                 />
             <Label x:Name="lblName"
                 Text="What's your name?"
-                   FontSize="{OnPlatform Android=20,WinUI=40}"
+                   FontSize="{OnPlatform Android=20,WinUI=40,MacCatalyst=40}"
                     VerticalOptions="Center" HorizontalOptions="Center"
                     Margin="0,20,0,40"
                    TextColor="Black" />
             <Border Stroke="LightGray"
                     StrokeThickness="1"
                     BackgroundColor="White"
-                    WidthRequest="{OnPlatform Android=205,WinUI=305}"
+                    WidthRequest="{OnPlatform Android=205,WinUI=305,MacCatalyst=305}"
                     x:Name="borderEntry">
                 <Entry  x:Name="entryUsername"
                         BackgroundColor="Transparent"
                         TextColor="Black"
                         HorizontalTextAlignment="Center"
-                        WidthRequest="{OnPlatform Android=200,WinUI=300}" />
+                        WidthRequest="{OnPlatform Android=200,WinUI=300,MacCatalyst=300}" />
             </Border>
             <ImageButton x:Name="startBtn"
                     Source="clapper.png" WidthRequest="150"
